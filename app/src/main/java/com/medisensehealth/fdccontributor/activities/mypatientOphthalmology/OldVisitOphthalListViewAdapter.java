@@ -46,8 +46,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.medisensehealth.fdccontributor.DataModel.DiagnosticCentreList;
 import com.medisensehealth.fdccontributor.DataModel.OldVisitsOphthalList;
+import com.medisensehealth.fdccontributor.DataModel.OpticalCentreList;
 import com.medisensehealth.fdccontributor.DataModel.PharmaCentreList;
 import com.medisensehealth.fdccontributor.R;
+import com.medisensehealth.fdccontributor.activities.settings.OpticalsListActivity;
 import com.medisensehealth.fdccontributor.adapter.mypatientOphthalmology.CustomDiagnosticCenterFilterAdapter;
 import com.medisensehealth.fdccontributor.adapter.mypatientOphthalmology.CustomPharmaCenterFilterAdapter;
 import com.medisensehealth.fdccontributor.network.APIClass;
@@ -88,7 +90,7 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
     Context mContext;
     String URL = "https://pixeleyecare.com/Contributors/print-emr/mobile_emr.php?pid=";
     int USER_ID;
-    String USER_NAME,USER_LOGIN_TYPE, DIAGNOSTIC_CENTRE_LIST, PHARMA_CENTRE_LIST;
+    String USER_NAME,USER_LOGIN_TYPE, DIAGNOSTIC_CENTRE_LIST, PHARMA_CENTRE_LIST, OPTICAL_CENTRE_LIST;
     ShareadPreferenceClass shareadPreferenceClass;
     SharedPreferences sharedPreferences;
 
@@ -96,11 +98,14 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
     List<DiagnosticCentreList> selectedDiagnoCentreArraylist = new ArrayList<>();
     List<PharmaCentreList> pharmaListArraylist = new ArrayList<>();
     List<PharmaCentreList> selectedPharmaArraylist = new ArrayList<>();
+    List<OpticalCentreList> opticalsListArraylist = new ArrayList<>();
+    List<OpticalCentreList> selectedOpticalCentreArraylist = new ArrayList<>();
+
     Gson gson = new Gson();
     LinearLayout addNew_contents, list_contents;
     AlertDialog alert11;
 
-    MultiSpinnerSearch diagnostic_multispinner, pharmacy_multispinner;
+    MultiSpinnerSearch diagnostic_multispinner, pharmacy_multispinner, opticals_multispinner;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public CustomTextView title, year, genre;
@@ -124,6 +129,8 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
         this.selectedDiagnoCentreArraylist = new ArrayList<>();
         this.pharmaListArraylist = new ArrayList<>();
         this.selectedPharmaArraylist = new ArrayList<>();
+        this.opticalsListArraylist = new ArrayList<>();
+        this.selectedOpticalCentreArraylist = new ArrayList<>();
 
         if(( this.sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0").equals("1"))) {
             USER_NAME =  sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_DOC_NAME, "NAME");
@@ -131,6 +138,7 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
             USER_LOGIN_TYPE = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0");
             DIAGNOSTIC_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_DIAGNOSTIC_CENTRES,"");
             PHARMA_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_PHARMA_CENTRES,"");
+            OPTICAL_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_OPTICAL_CENTRES,"");
         }
         else  if(( this.sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0").equals("2"))) {
             USER_NAME =  sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_PART_NAME, "NAME");
@@ -138,6 +146,7 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
             USER_LOGIN_TYPE = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0");
             DIAGNOSTIC_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_DIAGNOSTIC_CENTRES,"");
             PHARMA_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_PHARMA_CENTRES,"");
+            OPTICAL_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_OPTICAL_CENTRES,"");
         }
         else  if(( this.sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0").equals("3"))) {
             USER_NAME =  sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_MARKET_NAME, "NAME");
@@ -145,6 +154,7 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
             USER_LOGIN_TYPE = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_LOGINTYPE,"0");
             DIAGNOSTIC_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_DIAGNOSTIC_CENTRES,"");
             PHARMA_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_PHARMA_CENTRES,"");
+            OPTICAL_CENTRE_LIST = sharedPreferences.getString(HCConstants.PREF_OPTICAL_CENTRES,"");
         }
     }
 
@@ -159,8 +169,6 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final OldVisitsOphthalList eps = episodeList.get(position);
-
-
 
         int num_pos = position;
         num_pos = Integer.valueOf(episodeList.size()) - num_pos;
@@ -1373,15 +1381,20 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
         final AppCompatRadioButton rd_diagnostic = (AppCompatRadioButton) dialog.findViewById(R.id.emr_share_rb_diagno);
         final AppCompatRadioButton rd_pharmacy = (AppCompatRadioButton) dialog.findViewById(R.id.emr_share_rb_pharma);
         final AppCompatRadioButton rd_others = (AppCompatRadioButton) dialog.findViewById(R.id.emr_share_rb_others);
+        final AppCompatRadioButton rd_opticals = (AppCompatRadioButton) dialog.findViewById(R.id.emr_share_rb_optical);
+
         final LinearLayout share_what_content = (LinearLayout) dialog.findViewById(R.id.emr_share_what_content);
         share_what_content.setVisibility(View.GONE);
         final LinearLayout share_patient_content = (LinearLayout) dialog.findViewById(R.id.emr_share_patient_content);
         share_patient_content.setVisibility(View.GONE);
         final LinearLayout share_other_content = (LinearLayout) dialog.findViewById(R.id.emr_share_other_content);
         share_other_content.setVisibility(View.GONE);
+        final LinearLayout share_opticals_content = (LinearLayout) dialog.findViewById(R.id.emr_share_opticals_content);
+        share_opticals_content.setVisibility(View.GONE);
         final LinearLayout share_diagnostic_content = (LinearLayout) dialog.findViewById(R.id.emr_share_diagnosis_content);
         share_diagnostic_content.setVisibility(View.GONE);
         diagnostic_multispinner = (MultiSpinnerSearch) dialog.findViewById(R.id.searchMultiSpinner_diagnostics);
+        opticals_multispinner = (MultiSpinnerSearch) dialog.findViewById(R.id.searchMultiSpinner_opticals);
         final LinearLayout share_pharma_content = (LinearLayout) dialog.findViewById(R.id.emr_share_pharma_content);
         pharmacy_multispinner  = (MultiSpinnerSearch) dialog.findViewById(R.id.searchMultiSpinner_pharmacy);
 
@@ -1409,6 +1422,18 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
             }
         });
 
+        ImageView opticals_refresh = (ImageView) dialog.findViewById(R.id.emr_share_opticals_refresh);
+        opticals_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (NetworkUtil.getConnectivityStatusString(mContext).equalsIgnoreCase("enabled")) {
+                    collectOpticalsListFromServer(episodeID, episodePatientID);
+                } else {
+                    AppUtils.showCustomAlertMessage(mContext, HCConstants.INTERNET, HCConstants.INTERNET_CHECK, "OK", null, null);
+                }
+            }
+        });
+
         rd_patients.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -1418,11 +1443,13 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
                         rd_diagnostic.setChecked(false);
                         rd_pharmacy.setChecked(false);
                         rd_others.setChecked(false);
+                        rd_opticals.setChecked(false);
                         share_what_content.setVisibility(View.VISIBLE);
                         share_patient_content.setVisibility(View.VISIBLE);
                         share_diagnostic_content.setVisibility(View.GONE);
                         share_pharma_content.setVisibility(View.GONE);
                         share_other_content.setVisibility(View.GONE);
+                        share_opticals_content.setVisibility(View.GONE);
                     }
                 }
             }
@@ -1437,10 +1464,12 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
                         rd_diagnostic.setChecked(true);
                         rd_pharmacy.setChecked(false);
                         rd_others.setChecked(false);
+                        rd_opticals.setChecked(false);
                         share_what_content.setVisibility(View.VISIBLE);
                         share_patient_content.setVisibility(View.GONE);
                         share_pharma_content.setVisibility(View.GONE);
                         share_other_content.setVisibility(View.GONE);
+                        share_opticals_content.setVisibility(View.GONE);
                         share_diagnostic_content.setVisibility(View.VISIBLE);
                         getDiagnosticDetails(episodeID, episodePatientID);
                     }
@@ -1457,10 +1486,12 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
                         rd_diagnostic.setChecked(false);
                         rd_pharmacy.setChecked(true);
                         rd_others.setChecked(false);
+                        rd_opticals.setChecked(false);
                         share_what_content.setVisibility(View.VISIBLE);
                         share_patient_content.setVisibility(View.GONE);
                         share_diagnostic_content.setVisibility(View.GONE);
                         share_other_content.setVisibility(View.GONE);
+                        share_opticals_content.setVisibility(View.GONE);
                         share_pharma_content.setVisibility(View.VISIBLE);
                         getPharmacyDetails(episodeID, episodePatientID);
                     }
@@ -1476,12 +1507,36 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
                         rd_patients.setChecked(false);
                         rd_diagnostic.setChecked(false);
                         rd_pharmacy.setChecked(false);
+                        rd_opticals.setChecked(false);
                         rd_others.setChecked(true);
                         share_what_content.setVisibility(View.VISIBLE);
                         share_patient_content.setVisibility(View.GONE);
                         share_diagnostic_content.setVisibility(View.GONE);
                         share_pharma_content.setVisibility(View.GONE);
+                        share_opticals_content.setVisibility(View.GONE);
                         share_other_content.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        });
+
+        rd_opticals.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    if (compoundButton.getId() == R.id.emr_share_rb_optical) {
+                        rd_patients.setChecked(false);
+                        rd_diagnostic.setChecked(false);
+                        rd_pharmacy.setChecked(false);
+                        rd_others.setChecked(false);
+                        rd_opticals.setChecked(true);
+                        share_what_content.setVisibility(View.VISIBLE);
+                        share_patient_content.setVisibility(View.GONE);
+                        share_diagnostic_content.setVisibility(View.GONE);
+                        share_pharma_content.setVisibility(View.GONE);
+                        share_other_content.setVisibility(View.GONE);
+                        share_opticals_content.setVisibility(View.VISIBLE);
+                        getOpticalCenterDetails(episodeID, episodePatientID);
                     }
                 }
             }
@@ -1781,5 +1836,225 @@ public class OldVisitOphthalListViewAdapter extends RecyclerView.Adapter<OldVisi
 
             }
         }.execute();
+    }
+
+    private void getOpticalCenterDetails(int episodeID, int episodePatientID) {
+        opticalsListArraylist = new ArrayList<>();
+        selectedOpticalCentreArraylist = new ArrayList<>();
+        if (DIAGNOSTIC_CENTRE_LIST.equals("")) {
+            Log.d(Utils.TAG, "OPTICAL_CENTRE_LIST EMPTY ");
+
+            if (NetworkUtil.getConnectivityStatusString(mContext).equalsIgnoreCase("enabled")) {
+                collectOpticalsListFromServer(episodeID, episodePatientID);
+            } else {
+                AppUtils.showCustomAlertMessage(mContext, HCConstants.INTERNET, HCConstants.INTERNET_CHECK, "OK", null, null);
+            }
+
+        } else {
+            opticalsListArraylist = gson.fromJson(OPTICAL_CENTRE_LIST, new TypeToken<List<OpticalCentreList>>() {
+            }.getType());
+            if(opticalsListArraylist.size() > 0 ) {
+                Log.d(Utils.TAG, "OPTICAL_CENTRE_LIST > 0 " + opticalsListArraylist.size());
+                prepareOpticalCentreDataNew(opticalsListArraylist,episodeID, episodePatientID);
+            }
+        }
+    }
+
+    private void prepareOpticalCentreDataNew(List<OpticalCentreList> opticalsListArraylist, final int episodeID, final int episodePatientID) {
+        selectedOpticalCentreArraylist = new ArrayList<>();
+
+        final List<KeyPairBoolData> listArray = new ArrayList<KeyPairBoolData>();
+        for(int i=0; i<opticalsListArraylist.size(); i++) {
+            KeyPairBoolData h = new KeyPairBoolData();
+            h.setId(opticalsListArraylist.get(i).getOpticalId());
+            h.setName(opticalsListArraylist.get(i).getOpticalName());
+            h.setSelected(false);
+            listArray.add(h);
+        }
+
+        opticals_multispinner.setItems(listArray,  -1, new SpinnerListener() {
+
+            @Override
+            public void onItemsSelected(List<KeyPairBoolData> items) {
+
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).isSelected()) {
+                        selectedOpticalCentreArraylist = new ArrayList<>();
+                        Log.i(Utils.TAG, i + " name: " + items.get(i).getName() + " id: " + items.get(i).getId());
+                        selectedOpticalCentreArraylist.add(new OpticalCentreList(Integer.parseInt(String.valueOf(items.get(i).getId())), items.get(i).getName()));
+                    }
+                }
+
+                if(selectedOpticalCentreArraylist.size() > 0) {
+                    sendReferOpticalsRequestToserver(selectedOpticalCentreArraylist,episodeID, episodePatientID);
+                }
+            }
+        });
+
+    }
+
+    private void collectOpticalsListFromServer(final int episodeID, final int episodePatientID) {
+        opticalsListArraylist = new ArrayList<>();
+        final ProgressDialog progressDialog = new ProgressDialog(mContext, ProgressDialog.THEME_HOLO_LIGHT);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Loading Optical Centers...");
+        progressDialog.show();
+
+        int socketTimeout = 30000; // 30 seconds. You can change it
+        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, APIClass.DRS_OPTICALS_LIST,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(Utils.TAG, "optical list: "+ response.toString());
+                        if(response != null) {
+                            JSONObject jsonObject = null;
+                            JSONArray jsonArray, jsonArray1;
+
+                            try {
+                                jsonObject = new JSONObject(response);
+                                String staus_res = jsonObject.getString("status");
+                                if (staus_res.equals("true")) {
+                                    jsonArray = jsonObject.getJSONArray("opticals_details");
+                                    if (jsonArray.length() > 0) {
+
+                                        for (int i = 0; i < jsonArray.length(); i++) {
+                                            opticalsListArraylist.add(new OpticalCentreList(jsonArray.getJSONObject(i).getInt("optical_id"),
+                                                    jsonArray.getJSONObject(i).getString("optical_name"),jsonArray.getJSONObject(i).getString("optical_city"),
+                                                    jsonArray.getJSONObject(i).getString("optical_state"),jsonArray.getJSONObject(i).getString("optical_country"),
+                                                    jsonArray.getJSONObject(i).getString("optical_contact_person"),jsonArray.getJSONObject(i).getString("optical_contact_num"),
+                                                    jsonArray.getJSONObject(i).getString("optical_email"),USER_ID, USER_LOGIN_TYPE));
+
+                                        }
+                                        //Set the values
+                                        gson = new Gson();
+                                        String jsonOpticalText = gson.toJson(opticalsListArraylist);
+                                        if (sharedPreferences != null) {
+                                            shareadPreferenceClass.clearOpticalCentres();
+                                            shareadPreferenceClass.setOpticalCentres(jsonOpticalText);
+                                        }
+
+                                        prepareOpticalCentreDataNew(opticalsListArraylist,episodeID, episodePatientID);
+
+                                    }
+                                    else {
+                                        //Set the values
+                                        gson = new Gson();
+                                        String jsonOpticalText = gson.toJson(opticalsListArraylist);
+                                        if (sharedPreferences != null) {
+                                            shareadPreferenceClass.clearOpticalCentres();
+                                            shareadPreferenceClass.setOpticalCentres(jsonOpticalText);
+                                        }
+                                        prepareOpticalCentreDataNew(opticalsListArraylist,episodeID, episodePatientID);
+                                    }
+                                }
+                                progressDialog.dismiss();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                progressDialog.dismiss();
+                            }
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> map = new HashMap<String,String>();
+                map.put(APIClass.KEY_API_KEY,APIClass.API_KEY);
+                map.put(APIClass.KEY_USERID, String.valueOf(USER_ID));
+                map.put(APIClass.KEY_LOGINTYPE, USER_LOGIN_TYPE);
+                return map;
+            }
+        };
+
+        stringRequest.setRetryPolicy(policy);
+
+        RequestQueue requestQueue = AppController.getInstance(mContext).
+                getRequestQueue();
+        AppController.getInstance(mContext).addToRequestQueue(stringRequest);
+    }
+
+
+    private void sendReferOpticalsRequestToserver(final List<OpticalCentreList> selectedOpticalCentreArraylist, final int episodeID, final int episodePatientID) {
+
+        if(selectedOpticalCentreArraylist.size() > 0) {
+            for (int i = 0; i < selectedOpticalCentreArraylist.size(); i++) {
+                Log.i(Utils.TAG, selectedOpticalCentreArraylist.get(i).getOpticalId() + " : " + selectedOpticalCentreArraylist.get(i).getOpticalName());
+            }
+            Log.d(Utils.TAG, " opticsSize " + selectedOpticalCentreArraylist.size());
+
+            new AsyncTask<Void, Integer, Boolean>() {
+                boolean status = false;
+                ProgressDialog progressDialog;
+
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    progressDialog = new ProgressDialog(mContext, ProgressDialog.THEME_HOLO_LIGHT);
+                    progressDialog.setIndeterminate(true);
+                    progressDialog.setMessage("Please wait...");
+                    progressDialog.show();
+
+                }
+
+                @Override
+                protected Boolean doInBackground(Void... params) {
+
+                    try {
+
+                        JSONObject jsonObject = JSONParser.sendOpticalsReferal(String.valueOf(episodePatientID), String.valueOf(episodeID),
+                                selectedOpticalCentreArraylist, USER_ID, USER_LOGIN_TYPE);
+
+                        if (jsonObject != null) {
+                            Log.e(Utils.TAG, " GET: " + jsonObject.getString("result"));
+                            if (jsonObject.getString("result").equals("success")) {
+                                status = true;
+                            } else {
+                                status = false;
+                            }
+                        }
+                        // return true;
+                    } catch (JSONException e) {
+                        Log.i(Utils.TAG, "Error : " + e.getLocalizedMessage());
+                        return false;
+                    }
+                    return status;
+                }
+
+                @Override
+                protected void onPostExecute(Boolean aBoolean) {
+                    super.onPostExecute(aBoolean);
+                    if (progressDialog != null)
+                        progressDialog.dismiss();
+                    Log.e(Utils.TAG, "aBoolean: " + String.valueOf(aBoolean));
+                    if (aBoolean) {
+
+                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext, R.style.CustomDialog);
+                        alertDialogBuilder.setMessage("Referred to optical center successfully !!!. ");
+                        alertDialogBuilder.setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+
+                                    }
+                                });
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+                        alertDialog.show();
+                    } else {
+                        Toast.makeText(mContext, "Failed to refer optical center. \nTry later !!!", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }.execute();
+        }
     }
 }

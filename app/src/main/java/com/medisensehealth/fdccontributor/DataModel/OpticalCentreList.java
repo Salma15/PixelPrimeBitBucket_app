@@ -19,6 +19,11 @@ public class OpticalCentreList {
         this.loginType = user_login_type;
     }
 
+    public OpticalCentreList(int optical_id, String optical_name) {
+        this.optical_id = optical_id;
+        this.optical_name = optical_name;
+    }
+
     public int getOpticalId() { return optical_id; }
     public void setOpticalId(int optical_id) {
         this.optical_id = optical_id;

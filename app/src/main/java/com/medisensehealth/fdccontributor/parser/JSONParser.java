@@ -24,6 +24,7 @@ import com.medisensehealth.fdccontributor.DataModel.OphthalLens;
 import com.medisensehealth.fdccontributor.DataModel.OphthalPupil;
 import com.medisensehealth.fdccontributor.DataModel.OphthalSclera;
 import com.medisensehealth.fdccontributor.DataModel.OphthalViterous;
+import com.medisensehealth.fdccontributor.DataModel.OpticalCentreList;
 import com.medisensehealth.fdccontributor.DataModel.PharmaCentreList;
 import com.medisensehealth.fdccontributor.DataModel.PrescriptionList;
 import com.medisensehealth.fdccontributor.DataModel.QuizQuestion;
@@ -5151,4 +5152,55 @@ public class JSONParser {
         return null;
     }
 
+    public static JSONObject sendOpticalsReferal(String patient_id, String episode_id,
+                                                 List<OpticalCentreList> selectedOpticalCentreArraylist,
+                                                 int user_id, String user_login_type) {
+
+        try {
+            MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+            ArrayList<String> opticalsArrayList = new ArrayList<String>();
+            for(int i = 0; i < selectedOpticalCentreArraylist.size(); i++) {
+                opticalsArrayList.add(String.valueOf(selectedOpticalCentreArraylist.get(i).getOpticalId()));
+
+            }
+            String[] opticals_array = new String[opticalsArrayList.size()];
+            if(opticalsArrayList.size() > 0) {
+                for (int j = 0; j < opticalsArrayList.size(); j++) {
+                    opticals_array[j] = opticalsArrayList.get(j);
+                    builder.addFormDataPart("se_opticals_ID[]", opticals_array[j].toString());
+                }
+            }
+
+            builder.addFormDataPart(APIClass.KEY_API_KEY, APIClass.API_KEY);
+            builder.addFormDataPart("userid", String.valueOf(user_id));
+            builder.addFormDataPart("login_type", user_login_type);
+            builder.addFormDataPart("patient_id", String.valueOf(patient_id));
+            builder.addFormDataPart("episode_id", String.valueOf(episode_id));
+
+            RequestBody requestBody = builder.build();
+
+            Request request = new Request.Builder()
+                    .url(APIClass.DRS_OPTICALS_REFER)
+                    .post(requestBody)
+                    .build();
+
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(10, TimeUnit.SECONDS)
+                    .readTimeout(10, TimeUnit.SECONDS)
+                    .build();
+
+            Response response = client.newCall(request).execute();
+            String res = response.body().string();
+            Log.d(Utils.TAG, " refer: "+ res.toString());
+            return new JSONObject(res);
+
+        } catch (UnknownHostException | UnsupportedEncodingException e) {
+            Log.e(Utils.TAG, "Error: " + e.getLocalizedMessage());
+        } catch (Exception e) {
+            Log.e(Utils.TAG, "Other Error: " + e.getLocalizedMessage());
+        }
+
+
+        return null;
+    }
 }

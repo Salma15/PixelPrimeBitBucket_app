@@ -126,6 +126,32 @@
             </RadioGroup>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share2_rg"
+                android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/emr_share_rb_optical"
+                android:text="Optical Center"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_12"
+                android:gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_5"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
         <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -343,6 +369,55 @@
                         android:layout_height="30dp"
                         android:gravity="center_vertical"
                         android:id="@+id/emr_share_pharmacy_refresh"
+                        android:src="@mipmap/refresh_icon"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share_opticals_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To whom you would like to share?"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16"
+                    android:background="@color/light_bg7"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20">
+
+                    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                        android:id="@+id/searchMultiSpinner_opticals"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        app:hintText="-- Select Optical Center --" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/emr_share_opticals_refresh"
                         android:src="@mipmap/refresh_icon"/>
 
                 </LinearLayout>
