@@ -44,6 +44,7 @@ import com.medisensehealth.fdccontributor.utils.ShareadPreferenceClass;
 import com.medisensehealth.fdccontributor.utils.Utils;
 import com.medisensehealth.fdccontributor.views.CustomEditText;
 import com.medisensehealth.fdccontributor.views.CustomTextViewBold;
+import com.medisensehealth.fdccontributor.views.CustomTextViewItalicBold;
 import com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold;
 
 import org.json.JSONArray;
@@ -72,6 +73,7 @@ public class PharmacyListActivity extends AppCompatActivity implements View.OnCl
     List<PharmaCentreList> selectedPharmaArraylist = new ArrayList<>();
     Gson gson = new Gson();
     ListView pharma_listview;
+    CustomTextViewItalicBold no_data;
     SearchView pharma_searchView;
     CustomPharmaCenterFilterAdapter pharmaAdapter;
 
@@ -142,6 +144,8 @@ public class PharmacyListActivity extends AppCompatActivity implements View.OnCl
 
         pharma_searchView = (SearchView) findViewById(R.id.searchview_pharma);
         pharma_listview = (ListView) findViewById(R.id.pharma_list);
+        no_data = (CustomTextViewItalicBold) findViewById(R.id.pharmacy_empty);
+
         pharmaAdapter = new CustomPharmaCenterFilterAdapter(PharmacyListActivity.this,
                 R.layout.activity_listview, pharmaListArraylist);
         pharma_listview.setAdapter(pharmaAdapter);
@@ -305,6 +309,16 @@ public class PharmacyListActivity extends AppCompatActivity implements View.OnCl
 
     private void preparePharmaCentreData(List<PharmaCentreList> pharmaListArraylist) {
 
+        if(pharmaListArraylist.size()>0) {
+            no_data.setVisibility(View.GONE);
+            pharma_listview.setVisibility(View.VISIBLE);
+        }
+        else {
+            pharma_listview.setVisibility(View.GONE);
+            no_data.setVisibility(View.VISIBLE);
+        }
+
+
         final CustomPharmaCenterFilterAdapter pharmaAdapter = new CustomPharmaCenterFilterAdapter(PharmacyListActivity.this,
                 R.layout.activity_listview, pharmaListArraylist);
         pharma_listview.setAdapter(pharmaAdapter);
@@ -323,7 +337,7 @@ public class PharmacyListActivity extends AppCompatActivity implements View.OnCl
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Log.d(Utils.TAG, "SERACH: " + newText);
+                Log.d(Utils.TAG, "SEARCH: " + newText);
                 if (TextUtils.isEmpty(newText)) {
                     Log.d(Utils.TAG, "is empty " );
                     pharmaAdapter.filter(newText.toString());

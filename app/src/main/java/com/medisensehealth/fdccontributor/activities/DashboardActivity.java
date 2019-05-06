@@ -64,6 +64,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -86,7 +89,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     FragmentManager fragManager;
     FragmentTransaction fragTransaction;
     String ENTRY_TYPE = "NORMAL_TEST", USER_LOGIN_TYPE;
-    int LOGIN_USER_ID = 0;
+    int LOGIN_USER_ID = 0, HOSPITAL_ID=0;
     String USERNAME, USER_LOCATION, LOGIN_ENCRYPT_USERID, LOGIN_SPEC_NAME;
     ShareadPreferenceClass shareadPreferenceClass;
     SharedPreferences sharedPreferences;
@@ -168,6 +171,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             LOGIN_ENCRYPT_USERID  = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_DOC_ENCRYPT_USERID, "0");
             LOGIN_SPEC_NAME  = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_DOC_SPECIALIZATION_NAME, "SPEC_NAME");
             USER_GCM_TOKENID  = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_DOC_GCM_TOKENID, "");
+            HOSPITAL_ID = sharedPreferences.getInt(HCConstants.PREF_DOC_HOSPITAL_ID,0);
 
             USERNAME = Utils.USER_LOGIN_NAME;
             LOGIN_USER_ID = Utils.USER_LOGIN_ID;
@@ -179,6 +183,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             Utils.USER_LOGIN_ID = sharedPreferences.getInt(HCConstants.PREF_LOGINACTIVITY_PART_ID, 0);
             USER_LOCATION = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_PART_LOCATION, "CITY");
             USER_GCM_TOKENID  = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_PART_GCM_TOKENID, "");
+            HOSPITAL_ID = sharedPreferences.getInt(HCConstants.PREF_DOC_HOSPITAL_ID,0);
 
             USERNAME = Utils.USER_LOGIN_NAME;
             LOGIN_USER_ID = Utils.USER_LOGIN_ID;
@@ -189,6 +194,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             Utils.USER_LOGIN_NAME = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_MARKET_NAME, "NAME");
             Utils.USER_LOGIN_ID = sharedPreferences.getInt(HCConstants.PREF_LOGINACTIVITY_MARKET_ID, 0);
             USER_GCM_TOKENID  = sharedPreferences.getString(HCConstants.PREF_LOGINACTIVITY_MARKET_GCM_TOKENID, "");
+            HOSPITAL_ID = sharedPreferences.getInt(HCConstants.PREF_DOC_HOSPITAL_ID,0);
 
             USERNAME = Utils.USER_LOGIN_NAME;
             LOGIN_USER_ID = Utils.USER_LOGIN_ID;
@@ -522,10 +528,18 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             public void onClick(View v) {
                 dialog.dismiss();
 
+                String hosp_id = "";
+                try {
+                    hosp_id = md5(String.valueOf(HOSPITAL_ID));
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+
                 Intent sharingProfileIntent = new Intent(Intent.ACTION_SEND);
                 sharingProfileIntent.setType("text/plain");
                 sharingProfileIntent.putExtra(Intent.EXTRA_SUBJECT, "Pixel Prime");
-                sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n"+"https://pixeleyecare.com/SendRequestLink/RefLink?d="+LOGIN_ENCRYPT_USERID);
+               // sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n"+"https://pixeleyecare.com/SendRequestLink/RefLink?d="+LOGIN_ENCRYPT_USERID);
+                sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n"+"https://pixeleyecare.com/Doctor-Profile?id="+LOGIN_ENCRYPT_USERID+"&hid="+hosp_id);
                 startActivity(Intent.createChooser(sharingProfileIntent, "Share Profile Via"));
 
 
@@ -1126,4 +1140,17 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         protected void onProgressUpdate(Void... values) {}
     }
 
+    public static String md5(String input) throws NoSuchAlgorithmException {
+        String result = input;
+        if(input != null) {
+            MessageDigest md = MessageDigest.getInstance("MD5"); //or "SHA-1"
+            md.update(input.getBytes());
+            BigInteger hash = new BigInteger(1, md.digest());
+            result = hash.toString(16);
+            while(result.length() < 32) { //31 position string
+                result = "0" + result;
+            }
+        }
+        return result;
+    }
 }

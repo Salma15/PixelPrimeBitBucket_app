@@ -139,7 +139,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Pixel Prime");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, "I would like to invite you to try 'Pixel Prime' - a web & smartphone based application designed for Doctors. \nThis app is accessible through iOS and Android devices, as well as online. \n\nDownload the app using - Android: https://play.google.com/store/apps/details?id=com.medisensehealth.fdccontributor&hl=en");
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, "I would like to invite you to try 'Pixel Prime' - a web & smartphone based application designed for Doctors. \nThis app is accessible through Android devices, as well as online. \n\nDownload the app using - Android: https://play.google.com/store/apps/details?id=com.medisensehealth.fdccontributor&hl=en");
                 startActivity(Intent.createChooser(sharingIntent, "Share App via"));
                 break;
 

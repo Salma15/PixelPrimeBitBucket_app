@@ -45,6 +45,7 @@ import com.medisensehealth.fdccontributor.utils.ShareadPreferenceClass;
 import com.medisensehealth.fdccontributor.utils.Utils;
 import com.medisensehealth.fdccontributor.views.CustomEditText;
 import com.medisensehealth.fdccontributor.views.CustomTextViewBold;
+import com.medisensehealth.fdccontributor.views.CustomTextViewItalicBold;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,6 +73,7 @@ public class DiagnosisListActivity extends AppCompatActivity implements View.OnC
     List<DiagnosticCentreList> selectedDiagnoCentreArraylist = new ArrayList<>();
     Gson gson = new Gson();
     ListView diagnostic_listview;
+    CustomTextViewItalicBold no_data;
     SearchView diagnostic_searchView;
     CustomDiagnosticCenterFilterAdapter diagnoAdapter;
 
@@ -143,6 +145,8 @@ public class DiagnosisListActivity extends AppCompatActivity implements View.OnC
 
         diagnostic_searchView = (SearchView) findViewById(R.id.searchview_diagnos);
         diagnostic_listview = (ListView) findViewById(R.id.diagno_list);
+        no_data = (CustomTextViewItalicBold) findViewById(R.id.diagno_empty);
+
         diagnoAdapter = new CustomDiagnosticCenterFilterAdapter(DiagnosisListActivity.this,
                 R.layout.activity_listview, diagnosticsListArraylist);
         diagnostic_listview.setAdapter(diagnoAdapter);
@@ -303,6 +307,14 @@ public class DiagnosisListActivity extends AppCompatActivity implements View.OnC
 
     private void prepareDiagnostiCentreData(List<DiagnosticCentreList> diagnosticsListArraylist) {
 
+        if(diagnosticsListArraylist.size()>0) {
+            no_data.setVisibility(View.GONE);
+            diagnostic_listview.setVisibility(View.VISIBLE);
+        }
+        else {
+            diagnostic_listview.setVisibility(View.GONE);
+            no_data.setVisibility(View.VISIBLE);
+        }
 
         diagnoAdapter = new CustomDiagnosticCenterFilterAdapter(DiagnosisListActivity.this,
                 R.layout.activity_listview, diagnosticsListArraylist);

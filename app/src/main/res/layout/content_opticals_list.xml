@@ -43,6 +43,7 @@
                 android:id="@+id/optical_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_5">
             </ListView>
@@ -51,7 +52,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/optical_empty"
-                android:visibility="gone"
                 android:gravity="center"
                 android:textSize="@dimen/sp_30"
                 android:textColor="@color/textPrimary"
@@ -61,8 +61,8 @@
 
         <ImageView
             android:id="@+id/optical_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
             android:adjustViewBounds="true"
             android:src="@mipmap/refresh_icon"
             android:layout_gravity="bottom|right"
