@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/showview_root"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/bmj_icon"
+            android:id="@+id/showcase_bmj"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_15"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_20"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/share_icon"
+            android:id="@+id/showcase_share"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_20"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/notification_icon"
+            android:id="@+id/showcase_notify"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_20"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/showcase_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/footer"
+        android:background="@color/row_color"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/home_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/fragment_home"/>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/table_row_odd"/>
+
+    <include
+        android:id="@+id/shoecasefooter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        layout="@layout/footer"
+        android:elevation="2dp"
+        android:outlineProvider="bounds"/>
+
+</LinearLayout>

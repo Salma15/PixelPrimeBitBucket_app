@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.feeds.VideoDetailActivity"
+    tools:showIn="@layout/fragment_video_details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.youtube.player.YouTubeThumbnailView
+                    android:id="@+id/surgical_youtube_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible"/>
+
+                <RelativeLayout android:id="@+id/surgical_relativeLayout_over_youtube_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:visibility="visible"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <ImageView android:id="@+id/surgical_btnYoutube_player"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/youtube_play"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_10">
+
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/surgicaldetail_title"
+                    android:text="Video Title"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/textTitle"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_5">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/user_profile"
+                            android:id="@+id/surgicaldetail_userprofileImg"
+                            app:civ_border_width="2dp"
+                            android:scaleType="centerCrop"
+                            app:civ_border_color="@color/footer_bg"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:id="@+id/surgicaldetail_userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:textSize="@dimen/sp_12"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_toEndOf="@+id/surgicaldetail_userprofileImg"
+                            android:layout_toRightOf="@+id/surgicaldetail_userprofileImg"
+                            android:text="FDC Pixel" />
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:id="@+id/surgicaldetail_views"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textSize="@dimen/sp_12"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_below="@+id/surgicaldetail_userName"
+                            android:layout_toEndOf="@+id/surgicaldetail_userprofileImg"
+                            android:layout_toRightOf="@+id/surgicaldetail_userprofileImg"
+                            android:text="Views: 200" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textSize="@dimen/sp_12"
+                            android:text="Posted On"
+                            android:id="@+id/surgicaldetail_postedon_label"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textSize="@dimen/sp_16"
+                            android:gravity="right"
+                            android:id="@+id/surgicaldetail_postedon"
+                            android:layout_below="@+id/surgicaldetail_postedon_label"
+                            android:text="" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_20">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Like or Comments"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:gravity="left"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@mipmap/like_empty"
+                                    android:id="@+id/surgicaldetail_like"/>
+
+                                <com.medisensehealth.fdccontributor.views.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="20"
+                                    android:gravity="center"
+                                    android:id="@+id/surgicaldetail_like_count"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColor="@color/textColor"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="@dimen/dp_20">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@mipmap/comment_icon"
+                                    android:id="@+id/surgicaldetail_comment"/>
+
+                                <com.medisensehealth.fdccontributor.views.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="28"
+                                    android:gravity="center"
+                                    android:id="@+id/surgicaldetail_comment_count"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColor="@color/textColor"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Share on Social Media"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@mipmap/facebook"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:id="@+id/surgicaldetail_facebook"/>
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@mipmap/twitter"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:id="@+id/surgicaldetail_twitter"/>
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@mipmap/linkedin"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:id="@+id/surgicaldetail_linkedin"/>
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@mipmap/whatsapp"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:id="@+id/surgicaldetail_whatsapp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/surgicaldetail_comment_layout"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_edge_layout"
+                        android:padding="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/surgical_comm_usericon"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/user_profile"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/colorAccent"
+                            android:hint="Write comments here..."
+                            android:id="@+id/surgicaldetail_write_comment"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            android:gravity="center_vertical"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/black"
+                            android:layout_alignParentTop="true"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:backgroundTint="@android:color/transparent"
+                            android:background="@android:color/transparent"
+                            android:layout_toRightOf="@+id/surgical_comm_usericon"
+                            android:layout_toEndOf="@+id/surgical_comm_usericon" />
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/surgicaldetail_send_comment"
+                            android:src="@mipmap/send_icon"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="@color/footer_bg"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:padding="@dimen/dp_10"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:id="@+id/surgicaldetail_recyclerview">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14"
+                    android:text="Lets share this post to your friends on their emails"
+                    android:textColor="@color/textColor" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/round_edge_layout"
+                    android:padding="@dimen/dp_5">
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:id="@+id/surgicaldetail_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:hint="Enter email address"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/textColor"
+                        android:paddingLeft="@dimen/dp_12"
+                        android:textColorHint="@color/textColor"
+                        android:textSize="@dimen/sp_12" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/surgicaldetail_send_email"
+                        android:layout_alignParentEnd="true"
+                        android:src="@mipmap/send_icon"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dp_20"
+    android:layout_marginBottom="@dimen/dp_20">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add Medical Prescription"
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/sp_16"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/add_presc_close"
+            android:src="@mipmap/close_icon"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:orientation="vertical">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Product Name"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_prodname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Product Name"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Generic Name"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_genname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Generic Name"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_presc_description"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            android:text="Product Description"
+            android:textSize="@dimen/sp_14"/>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Dosage Frequency"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_frequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Frequency"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Timings"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_timings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Timings"
+            android:visibility="gone"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timings"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/spinner_bg"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/timings_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/drop" />
+
+        </RelativeLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Duration"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Durations"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/textPrimary"
+            android:text="Note"
+            android:visibility="gone"
+            android:textSize="@dimen/sp_14"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/add_presc_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/textPrimary"
+            android:background="@drawable/view_line_dotted"
+            android:hint="Note"
+            android:visibility="gone"
+            android:singleLine="false"
+            android:imeOptions="actionNext"
+            android:textSize="@dimen/sp_14"
+            android:ems="10" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_presc_submit"
+            android:text="SUBMIT PRESCRIPTION"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@color/contrast"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/diagnostic_add_new"
+                android:text="Add New Center"
+                android:textColor="@color/white"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_6"
+                android:paddingLeft="@dimen/sp_12"
+                android:paddingRight="@dimen/sp_12"
+                android:background="@color/colorPrimary"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/diagnostic_refresh"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:src="@mipmap/refresh_icon"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"></LinearLayout>
+
+           <ImageView
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:id="@+id/diagnostic_close"
+               android:src="@mipmap/close_icon"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diagnostic_addNew_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@color/white">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add New Diagnostic Center"
+                android:id="@+id/diagnostic_addNew_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_16"
+                android:background="@color/light_bg7"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:gravity="center"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_diagnostic_name"
+                android:layout_marginTop="@dimen/dp_15"
+                android:hint="Diagnostic Name"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_diagnostic_email"
+                android:layout_marginTop="@dimen/dp_15"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_diagnostic_mobile"
+                android:layout_marginTop="@dimen/dp_15"
+                android:hint="Mobile"
+                android:inputType="phone"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_diagnostic_city"
+                android:layout_marginTop="@dimen/dp_15"
+                android:hint="City"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_diagnostic_submit"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingRight="@dimen/sp_12"
+                    android:gravity="center_vertical"
+                    android:text="SUBMIT"
+                    android:layout_gravity="center"
+                    android:background="@color/light_bg7"
+                    android:textColor="@color/colorPrimary"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_diagnostic_cancel"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingRight="@dimen/sp_12"
+                    android:gravity="center_vertical"
+                    android:text="CANCEL"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:background="@color/light_bg7"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diagnostic_list_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_2">
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searchview_diagnostic"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_edge_layout_light"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/diagnostic_list"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginBottom="@dimen/dp_5">
+            </ListView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

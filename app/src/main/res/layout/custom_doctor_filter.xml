@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:paddingBottom="@dimen/dp_1">
+
+       <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.90"
+           android:id="@+id/doctor_category_header"
+           android:text="Category"
+           android:gravity="center"
+           android:minHeight="@dimen/dp_50"
+           android:textSize="@dimen/sp_16"
+           android:visibility="gone"
+           android:background="@drawable/header_tab"
+           android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+           android:textColor="@color/black" />
+
+       <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1.20"
+           android:id="@+id/doctor_specialization_header"
+           android:text="Specialization"
+           android:gravity="center"
+           android:minHeight="@dimen/dp_50"
+           android:textSize="@dimen/sp_16"
+           android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+           android:background="@drawable/header_tab"
+           android:textColor="@color/black" />
+
+       <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.90"
+           android:id="@+id/doctor_hospital_header"
+           android:text="Hospital"
+           android:gravity="center"
+           android:minHeight="@dimen/dp_50"
+           android:textSize="@dimen/sp_16"
+           android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+           android:background="@color/header_tab_bg"
+           android:textColor="@color/black" />
+
+       <ImageView
+           android:layout_width="@dimen/dp_30"
+           android:layout_height="@dimen/dp_30"
+           android:layout_marginRight="@dimen/dp_2"
+           android:layout_gravity="center_vertical"
+           android:id="@+id/doctor_close"
+           android:src="@mipmap/close_icon"/>
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/doctor_categoty_contents">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/doctor_categoty_search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <ListView
+            android:id="@+id/category_list"
+            android:layout_width="match_parent"
+            android:layout_height="320dp" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/doctor_specialization_contents">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View All Doctors"
+            android:gravity="center"
+            android:id="@+id/specialization_alldoctors"
+            android:minHeight="@dimen/dp_40"
+            android:textSize="@dimen/sp_16"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:background="@drawable/round_edge_layout"
+            android:textColor="@color/colorPrimary" />
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/doctor_specialization_search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/specialization_list"
+            android:layout_width="match_parent"
+            android:layout_height="320dp" >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/doctor_hospital_contents">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/doctor_hospital_search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/hospital_list"
+            android:layout_width="match_parent"
+            android:layout_height="320dp" >
+        </ListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

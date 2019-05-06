@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/parent_patviewBookAppt"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:layout_margin="@dimen/dp_10">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Panel Doctor"
+            android:textColor="@color/black"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <AutoCompleteTextView
+                android:id="@+id/pat_autoCompleteTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:spinnerMode="dropdown"
+                android:hint="-- Select --"
+                android:background="@drawable/spinner_bg"
+                android:textColorHint="@color/colorAccent"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:ems="10"
+                android:text="" />
+        </RelativeLayout>
+
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date Here "
+            android:layout_marginTop="@dimen/dp_20"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:id="@+id/pateditTextDialogUserInput"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:hint=" -- Select Date -- "
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_5"
+            android:textColorHint="@color/colorAccent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="@dimen/dp_5"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Time Here "
+            android:textColor="@color/black"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/pat_spinner_appt_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/image"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/drop" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

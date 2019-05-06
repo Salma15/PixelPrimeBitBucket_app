@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/patient_details_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/patient_book_apppoint"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/calender_icon"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Appointment"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="@dimen/sp_14"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/patient_send_case"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:background="@drawable/round_button_primary"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/forward_icon"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reassign Case"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_chief_medcomp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:id="@+id/medcomp_label"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pchief_medcomp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_below="@+id/medcomp_label"
+                android:ems="23"
+                android:paddingBottom="@dimen/dp_5"
+                android:layout_weight="1"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_enquiry_date"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_penquiry_date"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_id"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_patient_id"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_status"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pstatus"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_name"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pname"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_gen"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pgender"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_age"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_page"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_weight"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pweight"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_hypertension"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_phypertension"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_diabetes"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pdiabetes"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_specialization"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pspecialization"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_city"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pcity"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_state"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pstate"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_country"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pcountry"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_mobile"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pmobile"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_email"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pemail"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_treating_brief_description"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:id="@+id/brief_desc_label"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/table_row_odd">
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/brief_desc_label"
+                android:ems="23"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_weight="1"
+                android:id="@+id/view_pbrief_desc"
+                android:textColor="@color/black"
+                android:paddingBottom="@dimen/dp_5"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/table_row_odd" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message to doctor"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:id="@+id/query_label"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pquery_doc"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_below="@id/query_label"
+                android:paddingBottom="@dimen/dp_5"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_location"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_plocation"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_maritalstatus"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pmaritalstatus"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_profession"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pprofession"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_contactperson"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_pcontactperson"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_address"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_paddress"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_treating_doc"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_eptreating_doc"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/table_row_odd"
+            android:visibility="gone" >
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/p_treating_hosp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_12"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_ptreating_hospital"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/dp_12"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+    </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

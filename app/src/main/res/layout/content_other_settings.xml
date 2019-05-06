@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.settings.OtherSettingsActivity"
+    tools:showIn="@layout/fragment_other_settings">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_bg7"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Customized Settings"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:textColor="@color/colorPrimary"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/refresh_btn"
+                android:layout_marginRight="@dimen/dp_5"
+                android:src="@mipmap/refresh_icon"/>
+
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Payment Section "
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_10"
+            android:background="@drawable/edittext_input_line_primary">
+
+            <RadioGroup
+                android:id="@+id/rg_PaymentSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_paymentEnable"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Enable"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary" />
+
+                <RadioButton
+                    android:id="@+id/rb_paymentDisable"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14"
+                    android:text="Disable" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pre printed prescription pad? "
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_10"
+            android:background="@drawable/edittext_input_line_primary">
+
+        <RadioGroup
+            android:id="@+id/rg_PrescPad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_PrescPadEnable"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Enable"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/textPrimary" />
+
+            <RadioButton
+                android:id="@+id/rb_PrescPadDisable"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_14"
+                android:text="Disable" />
+
+        </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/preprint_pad_layout"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:orientation="vertical">
+
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Header Height? (in cm)*"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/textPrimary"
+                        android:clickable="true"
+                        android:editable="false"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center_vertical"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/preprint_header_height"
+                        android:hint="Height (cms)"
+                        android:singleLine="true"
+                        android:background="@drawable/view_line_dotted"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:orientation="vertical">
+
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Footer Height? (in cm)*"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/textPrimary"
+                        android:clickable="true"
+                        android:editable="false"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center_vertical"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/preprint_footer_height"
+                        android:hint="Height (cms)"
+                        android:singleLine="true"
+                        android:background="@drawable/view_line_dotted"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/textPrimary"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+       </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do you collect consultation fee before consultation?"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_10"
+            android:background="@drawable/edittext_input_line_primary">
+
+            <RadioGroup
+                android:id="@+id/rg_ConsultFees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_ConsultFeesYes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textPrimary" />
+
+                <RadioButton
+                    android:id="@+id/rb_ConsultFeesNo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14"
+                    android:text="No" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logo to be appear in printed prescription pad (Preferred size 120px x 120px)"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:background="@drawable/edittext_input_line_primary">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/other_uploadimage"
+                android:text="Upload Image"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/dp_2"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/other_image"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:src="@drawable/user_profile"/>
+
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flash message to be printed below prescription"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:background="@drawable/edittext_input_line_primary">
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/other_flash_messgae"
+                android:hint="For appointments call ........."
+                android:background="@drawable/view_line_dotted"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/other_submit"
+            android:text="Save Changes"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:layout_margin="@dimen/dp_20"/>
+
+
+    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

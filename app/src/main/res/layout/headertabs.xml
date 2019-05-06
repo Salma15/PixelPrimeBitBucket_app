@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:orientation="vertical"
+    android:background="@color/colorAccent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/round_button_white"
+        android:layout_margin="@dimen/dp_10"
+        android:padding="@dimen/dp_10">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/header_sub_filter"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/filter_icon_primary"/>
+        
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/header_sub_layout"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/search_icon_primary"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14"
+                android:paddingLeft="@dimen/dp_10"
+                android:id="@+id/header_sub_searchtext"
+                android:text="Search by patient name or phone no."/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:id="@+id/header_sub_create"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/add_user_icon"/>
+        
+
+    </LinearLayout>
+
+</LinearLayout>

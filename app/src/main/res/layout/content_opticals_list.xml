@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.settings.OpticalsListActivity"
+    tools:showIn="@layout/fragment_opticals_list">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_2">
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searchview_optical"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/round_edge_layout_light"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <ListView
+                android:id="@+id/optical_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_5">
+            </ListView>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewItalicBold
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/optical_empty"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textSize="@dimen/sp_30"
+                android:textColor="@color/textPrimary"
+                android:text="No records found !!!"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/optical_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/refresh_icon"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitStart" />
+
+    </FrameLayout>
+
+</LinearLayout>

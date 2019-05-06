@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.feeds.SearchFeedsActivity"
+    tools:showIn="@layout/fragment_search">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="vertical"
+        android:background="@color/colorAccent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/round_button_white"
+            android:layout_margin="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/search_icon_primary"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/search_autocompletetext"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Search by patient name or phone no."
+                    android:textColorHint="@color/colorPrimary"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/sp_12"
+                    android:background="@drawable/edittext_input_line_white"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone">
+                    <requestFocus/>
+                </AutoCompleteTextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/search_cancel"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/close_icon"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.medisensehealth.fdccontributor.views.CustomTextViewItalic
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No records found !!!"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/search_noresult"
+        android:layout_margin="@dimen/dp_10"
+        android:textSize="@dimen/sp_24"
+        android:textColor="@color/colorPrimary"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_recycleriew"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:scrollbars="vertical" />
+
+
+
+</LinearLayout>

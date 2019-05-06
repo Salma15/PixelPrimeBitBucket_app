@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/examlist_item"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/exam_list_name"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:textSize="@dimen/sp_14"
+            android:maxLines="4"
+            android:textColor="@color/textPrimary"
+            android:text="Test Name"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+           <!-- <Spinner
+                android:id="@+id/exam_list_reult"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:textSize="@dimen/sp_14"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@mipmap/drop" />-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_bg"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/exam_list_reult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:background="@android:color/transparent"
+                    android:gravity="right"
+                    android:layout_marginLeft="5dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/drop" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_list_findings"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="@dimen/sp_14"
+            android:maxLines="3"
+            android:inputType="text"
+            android:background="@drawable/view_line_dotted"
+            android:textColor="@color/textPrimary"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_gravity="center"
+            android:hint="Findings"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/exam_list_delete"
+            android:layout_gravity="center"
+            android:src="@mipmap/cancel_icon"/>
+
+    </LinearLayout>
+
+</LinearLayout>

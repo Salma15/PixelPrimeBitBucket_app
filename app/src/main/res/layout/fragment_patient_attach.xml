@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="No Attachments Found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pat_attach_status"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black"
+        android:padding="@dimen/dp_15"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pat_attach_lists"/>
+
+
+            <com.medisensehealth.fdccontributor.views.TouchImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="@dimen/dp_500"
+                android:visibility="gone"
+                android:adjustViewBounds="true"
+                android:id="@+id/image_attach"/>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_weight="1">
+
+            </ProgressBar>
+
+
+
+</LinearLayout>

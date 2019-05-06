@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.DashboardActivity">
+
+    <item
+        android:id="@+id/item_emr_add"
+        android:title="Add"
+        android:icon="@mipmap/add_white_icon"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/item_emr_swich_user"
+        android:title="Switch Hospital"
+        android:icon="@mipmap/hospital_switch"
+        app:showAsAction="always"/>
+
+</menu>

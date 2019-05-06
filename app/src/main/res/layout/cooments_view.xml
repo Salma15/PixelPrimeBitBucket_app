@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_400"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_margin="@dimen/dp_20"
+        android:id="@+id/comments_recyclerview">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ProgressBar
+        android:id="@+id/comments_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_edge_layout"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_below="@+id/comments_recyclerview"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/blog_comm_icon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/user_profile"/>
+
+        <com.medisensehealth.fdccontributor.views.CustomEditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColorHint="@color/colorAccent"
+            android:hint="Write comments here..."
+            android:id="@+id/comments_write_comment"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:gravity="center_vertical"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:layout_toRightOf="@+id/event_comm_usericon"
+            android:layout_toEndOf="@+id/event_comm_usericon" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/comments_send_comment"
+            android:src="@mipmap/send_icon"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_10">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Add Health Track Details"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_marginBottom="@dimen/dp_10"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:id="@+id/trend_add_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_edge_layout_light"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="--Select Date--"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14" />
+
+                <LinearLayout
+                    android:id="@+id/ophthal_spectacle_prescription_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5">
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/mypat_eporth_cardview_spectacle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        card_view:cardBackgroundColor="@color/light_gray1"
+                        card_view:cardCornerRadius="10dp"
+                        card_view:cardElevation="4dp"
+                        card_view:cardMaxElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dp_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:orientation="vertical">
+
+                                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/round_edge_layout"
+                                    android:gravity="center"
+                                    android:paddingBottom="@dimen/dp_5"
+                                    android:paddingTop="@dimen/dp_5"
+                                    android:text="RIGHT EYE"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:stretchColumns="*">
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Col1"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18"
+                                                android:visibility="invisible" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Sphere"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Cyl"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Axis"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="D.V"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_sphere_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_cyl_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_axis_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="N.V"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_sphere_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_cyl_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_axis_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="0.28"
+                                                android:gravity="center"
+                                                android:text="IPD"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_ipd_right"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+
+                                </TableLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_20"
+                                android:background="@drawable/edittext_input_line_primary"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/dp_20">
+
+                                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/round_edge_layout"
+                                    android:gravity="center"
+                                    android:paddingBottom="@dimen/dp_5"
+                                    android:paddingTop="@dimen/dp_5"
+                                    android:text="LEFT EYE"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:stretchColumns="*">
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Col1"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18"
+                                                android:visibility="invisible" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Sphere"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Cyl"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="Axis"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="D.V"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_sphere_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_cyl_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_dv_axis_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:text="N.V"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_sphere_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_cyl_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_nv_axis_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+                                    <TableRow
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="0.28"
+                                                android:gravity="center"
+                                                android:text="IPD"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_18" />
+
+                                            <com.medisensehealth.fdccontributor.views.CustomEditText
+                                                android:id="@+id/spect_ipd_left"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="@dimen/dp_10"
+                                                android:layout_marginRight="@dimen/dp_10"
+                                                android:layout_weight="1"
+                                                android:background="@color/white"
+                                                android:gravity="center"
+                                                android:text=""
+                                                android:inputType="numberDecimal"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/sp_16" />
+
+
+                                        </LinearLayout>
+                                    </TableRow>
+
+
+                                </TableLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SUBMIT DATA"
+                    android:id="@+id/trend_submit"
+                    android:layout_margin="@dimen/dp_20"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

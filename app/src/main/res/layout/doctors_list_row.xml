@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/doctor_list_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_1"
+        card_view:cardCornerRadius="12dp"
+        card_view:contentPadding="10dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="6dp"
+        card_view:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/doclist_profile"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/user_profile"
+                app:civ_border_width="2dp"
+                android:scaleType="centerCrop"
+                app:civ_border_color="#fafafa"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:id="@+id/doclist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textTitle"
+                android:textSize="@dimen/sp_16"
+                android:layout_toEndOf="@+id/doclist_profile"
+                android:layout_toRightOf="@+id/doclist_profile"
+                android:text="Doctor Name" />
+
+            <ImageView
+                android:src="@mipmap/like_empty"
+                android:id="@+id/doclist_favourite"
+                android:scaleType="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/appt_patientname"
+                android:layout_alignBottom="@+id/appt_patientname"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:id="@+id/doclist_specialization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/doclist_name"
+                android:layout_alignStart="@+id/doclist_name"
+                android:layout_below="@+id/doclist_name"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/textColor"
+                android:text="Specialty" />
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:id="@+id/doc_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/doclist_specialization"
+                android:layout_alignStart="@+id/doclist_specialization"
+                android:layout_below="@+id/doclist_specialization"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/textColor"
+                android:text="Place" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_babkground"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_40">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/login_header_img" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout" >
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:id="@+id/login_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="textNoSuggestions"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:drawableLeft="@mipmap/email_icon"
+                android:drawableStart="@mipmap/email_icon"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:drawablePadding="10dp"
+                android:background="@drawable/edittext_input_line_white"
+                android:paddingBottom="@dimen/dp_18"
+                android:hint="Mobile Number/ Email ID" />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/edittext_input_line_white"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_toLeftOf="@+id/login_password_img"
+                android:paddingBottom="@dimen/dp_10"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+                <com.medisensehealth.fdccontributor.views.CustomEditText
+                    android:id="@+id/login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="textPassword|textNoSuggestions"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@mipmap/key_icon"
+                    android:drawableStart="@mipmap/key_icon"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:drawablePadding="10dp"
+                    android:background="@null"
+                    android:hint="Password" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_alignParentRight="true"
+                android:id="@+id/login_password_img"
+                android:src="@mipmap/password_visible"/>
+
+        </RelativeLayout>
+
+
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:id="@+id/login_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textSize="@dimen/sp_24"
+            android:background="@drawable/round_button_white"
+            android:textColor="@color/colorPrimary"
+            android:text="Sign In" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Member?"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:id="@+id/login_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:text="Sign up here"
+                android:textColor="@color/textYellow"
+                android:textSize="@dimen/sp_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password?"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_forgotpassword"
+                android:text="Recover Password"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/textYellow"
+                android:paddingLeft="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

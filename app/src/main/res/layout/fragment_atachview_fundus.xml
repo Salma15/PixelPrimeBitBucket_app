@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:id="@+id/image_edit_fundus"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/sp_16"
+        android:text="Edit Fundus Image"/>
+
+    <com.medisensehealth.fdccontributor.views.TouchImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_5"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:id="@+id/image_attachview_fundus"/>
+
+</LinearLayout>

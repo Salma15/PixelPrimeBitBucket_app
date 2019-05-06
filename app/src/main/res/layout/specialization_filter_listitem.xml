@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/m_btn"
+    android:layout_marginTop="@dimen/dp_10">
+
+    <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/round_edge_layout"
+        android:id="@+id/m_imageview"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:paddingTop="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_gravity="center_vertical"
+        android:paddingBottom="@dimen/dp_5"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:gravity="center_horizontal|center_vertical"/>
+
+    <com.medisensehealth.fdccontributor.views.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/m_textview"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_gravity="center_vertical"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"/>
+
+</LinearLayout>

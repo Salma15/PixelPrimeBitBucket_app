@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Family Member/ Patient"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:background="@drawable/edittext_input_line_primary"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/textPrimary" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/family_member_listView"/>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/family_member_submit"
+            android:layout_margin="@dimen/dp_20"
+            android:text="SUBMIT"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/textPrimary"
+            android:background="@color/contrast"/>
+
+    </LinearLayout>
+
+</LinearLayout>

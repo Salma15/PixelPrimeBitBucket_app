@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10"
+    android:background="@drawable/login_babkground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Sign up"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@android:color/transparent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/white" >
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions"
+                            android:textColorHint="@color/white"
+                            android:textColor="@color/white"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:cursorVisible="false"
+                            android:textSize="16sp"
+                            android:id="@+id/signupnew_designation"
+                            android:background="@drawable/edittext_input_line_white"
+                            android:text="Dr. " />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/white"
+                        app:errorTextAppearance="@style/error_appearance"
+                        android:id="@+id/signupnew_name_layout" >
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/signupnew_name"
+                            android:inputType="textNoSuggestions"
+                            android:textColorHint="@color/white"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:background="@drawable/edittext_input_line_white"
+                            android:hint="Name" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:id="@+id/signupnew_mobile_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/signupnew_mobile"
+                        android:inputType="textNoSuggestions|number"
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:maxLength="10"
+                        android:background="@drawable/edittext_input_line_white"
+                        android:hint="Mobile Number (10 digits)" />
+                </android.support.design.widget.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/dp_10" >
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_toRightOf="@+id/signupnew_country"
+                        android:textColorHint="@color/white"
+                        app:errorTextAppearance="@style/error_appearance"
+                        android:layout_height="wrap_content">
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Mobile Number"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:inputType="number|textNoSuggestions"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/edittext_input_line_white"
+                            android:maxLength="10"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/signupnew_country"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        app:ccp_showFlag="false"
+                        android:paddingTop="@dimen/dp_5"
+                        app:ccpDialog_backgroundColor="@android:color/transparent"
+                        android:background="@android:color/transparent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                </RelativeLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/white"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:id="@+id/signupnew_email_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/signupnew_email"
+                        android:inputType="textNoSuggestions|textEmailAddress"
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:background="@drawable/edittext_input_line_white"
+                        android:hint="Email" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/white"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:id="@+id/signupnew_hospitalName_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/signupnew_hospitalName"
+                        android:inputType="textNoSuggestions"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:background="@drawable/edittext_input_line_white"
+                        android:hint="Hospital/ Clinic Name" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/white"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:id="@+id/signupnew_city_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/signupnew_city"
+                        android:inputType="textNoSuggestions"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:background="@drawable/edittext_input_line_white"
+                        android:hint="City" />
+                </android.support.design.widget.TextInputLayout>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Specialization "
+                    android:textColor="@color/white"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/spinner_bg_white"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/signupnew_specialization_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/drop_white" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/edittext_input_line_white"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <CheckBox
+                        android:id="@+id/checkBox_tems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="" />
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:id="@+id/signup_new_terms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Terms &amp; Conditions"
+                        android:textSize="16sp"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:textColor="@color/white"
+                        android:clickable="true" />
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:id="@+id/signupnew_submit"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/round_button_white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already a member?"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_18"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:id="@+id/signupnew_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:text="Sign in here"
+                        android:textColor="@color/textYellow"
+                        android:textSize="@dimen/sp_18"
+                        tools:text="Sign in here" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

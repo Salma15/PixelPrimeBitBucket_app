@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_10">
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          
+          <de.hdodenhof.circleimageview.CircleImageView
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/comment_icon"
+              android:layout_width="45dp"
+              android:layout_height="45dp"
+              android:src="@mipmap/profile_user_icon"
+              app:civ_border_width="2dp"
+              android:scaleType="centerCrop"
+              app:civ_border_color="#fafafa"/>
+
+          <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+              android:text="Doctor Name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:paddingTop="@dimen/dp_2"
+              android:layout_toRightOf="@+id/comment_icon"
+              android:layout_toEndOf="@+id/comment_icon"
+              android:id="@+id/comment_list_name" />
+
+          <com.medisensehealth.fdccontributor.views.CustomTextViewItalic
+              android:text="Comments here...."
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:layout_marginTop="@dimen/dp_6"
+              android:layout_toRightOf="@+id/comment_icon"
+              android:layout_toEndOf="@+id/comment_icon"
+              android:layout_below="@+id/comment_list_name"
+              android:id="@+id/comments_list_desc" />
+
+          <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+              android:text=""
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_above="@+id/comments_list_desc"
+              android:paddingRight="@dimen/dp_5"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentEnd="true"
+              android:id="@+id/comments_list_date" />
+
+      </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

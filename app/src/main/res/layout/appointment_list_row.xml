@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/appt_tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_1"
+        card_view:cardCornerRadius="12dp"
+        card_view:contentPadding="10dp"
+        card_view:cardElevation="4dp"
+        card_view:cardMaxElevation="6dp"
+        card_view:cardBackgroundColor="@color/white">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/rounded_textview"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:id="@+id/appt_token_num" />
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/appt_token_online"
+                    android:text="Online"
+                    android:visibility="gone"
+                    android:background="@color/status_green"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:id="@+id/appt_patientname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/textTitle"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/sp_16"
+                        android:hint="Name"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_bg"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/status_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right"
+                                android:background="@android:color/transparent"
+                                android:gravity="right"
+                                android:layout_marginLeft="5dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/drop" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:id="@+id/appt_visit_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/textColor"
+                    android:layout_below="@+id/appt_patientname"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:id="@+id/appt_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Time"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_below="@+id/appt_visit_date"/>
+
+                    <LinearLayout
+                        android:id="@+id/appt_reschedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/appt_visit_date"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@mipmap/calender_icon"
+                            android:layout_gravity="right"
+                            android:gravity="center_vertical" />
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Reschedule"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_2"
+                            android:textSize="@dimen/sp_14"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <ImageView
+                    android:id="@+id/appt_delete"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:layout_below="@+id/appt_visit_date"
+                    card_view:srcCompat="@mipmap/close_icon" />
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:id="@+id/appt_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/appt_patientname"
+                    android:layout_alignBottom="@+id/appt_patientname"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_2"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:background="@drawable/round_edge_layout_green"
+                    android:text="Status" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

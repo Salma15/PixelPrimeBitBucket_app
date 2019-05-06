@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/dp_18"
+    android:paddingTop="@dimen/dp_18"
+    android:paddingLeft="@dimen/dp_6"
+    android:paddingRight="@dimen/dp_6" >
+
+    <com.medisensehealth.fdccontributor.views.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Title"
+        android:gravity="center"
+        android:textSize="@dimen/dp_24"
+        android:paddingTop="@dimen/dp_12"
+        android:layout_margin="@dimen/dp_6"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/title"
+        android:background="@color/colorPrimary"
+        android:layout_margin="@dimen/dp_6" />
+
+    <com.medisensehealth.fdccontributor.views.CustomTextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Message here ...."
+        android:gravity="center"
+        android:textSize="@dimen/dp_14"
+        android:layout_below="@+id/title"
+        android:paddingTop="@dimen/dp_12"
+        android:layout_margin="@dimen/dp_6"/>
+
+    <com.medisensehealth.fdccontributor.views.CustomTextView
+        android:id="@+id/dialogButtonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" OK "
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/sp_18"
+        android:layout_margin="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:layout_below="@+id/message"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/contrast">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Medical History"
+                    android:textSize="@dimen/dp_18"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:textColor="@color/colorPrimary"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/medhist_refresh"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@mipmap/refresh_icon"/>
+
+            </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_10">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/status_red"
+                android:gravity="center"
+                android:text="Note: Below all the fields are optional"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:textColorHint="@color/colorPrimary"
+                    android:id="@+id/medhist_weight_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_weight"
+                        android:inputType="textNoSuggestions|numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:maxLength="5"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:hint="Weight (in Kgs)" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorPrimary"
+                        android:id="@+id/medhist_height_cms_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_height_cms"
+                        android:inputType="textNoSuggestions|phone"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:maxLength="3"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:textSize="@dimen/sp_14"
+                        android:hint="Height (Cms.)"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:textColorHint="@color/colorPrimary"
+                        android:id="@+id/medhist_height_layout" >
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/medhist_height"
+                            android:inputType="textNoSuggestions|phone"
+                            android:textColor="@color/black"
+                            android:singleLine="true"
+                            android:maxLength="1"
+                            android:background="@drawable/edittext_input_line_primary"
+                            android:textSize="@dimen/sp_14"
+                            android:hint="Height (Ft.)"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:textColorHint="@color/colorPrimary"
+                        android:id="@+id/medhist_height_inches_layout" >
+
+                        <com.medisensehealth.fdccontributor.views.CustomEditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/medhist_height_inches"
+                            android:inputType="textNoSuggestions|phone"
+                            android:textColor="@color/black"
+                            android:singleLine="true"
+                            android:maxLength="2"
+                            android:text="0"
+                            android:background="@drawable/edittext_input_line_primary"
+                            android:textSize="@dimen/sp_14"
+                            android:hint="Ht.(Inch)"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/medhist_bmi"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14"
+                    android:maxLength="4"
+                    android:text="BMI"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1">
+                    <com.medisensehealth.fdccontributor.views.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_bmi_status"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_2"
+                        android:paddingBottom="@dimen/dp_2"
+                        android:layout_marginLeft="@dimen/dp_2"
+                        android:text=""/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Hypertension "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioHypertension"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radiohyperYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radiohyperNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Diabetes "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioDiabetes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radiodiabetesYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radiodiabetesNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dp_5"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:text="Smoking "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@drawable/spinner_bg"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/medhist_smoking_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/drop" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dp_5"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:text="Alcohol "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@drawable/spinner_bg"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/medhist_alcohol_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/drop" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColorHint="@color/colorPrimary"
+                android:id="@+id/medhist_interventions_layout" >
+
+                <com.medisensehealth.fdccontributor.views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medhist_interventions"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@drawable/edittext_input_line_primary"
+                    android:hint="Previous interventions" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColorHint="@color/colorPrimary"
+                android:id="@+id/medhist_neuro_layout" >
+
+                <com.medisensehealth.fdccontributor.views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medhist_neuro"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@drawable/edittext_input_line_primary"
+                    android:hint="Stroke or known neurological issues" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColorHint="@color/colorPrimary"
+                android:id="@+id/medhist_kidney_issues_layout" >
+
+                <com.medisensehealth.fdccontributor.views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medhist_kidney_issues"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@drawable/edittext_input_line_primary"
+                    android:hint="Known kidney issues" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColorHint="@color/colorPrimary"
+                android:id="@+id/medhist_otherdetails_layout" >
+
+                <com.medisensehealth.fdccontributor.views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/medhist_otherdetails"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@drawable/edittext_input_line_primary"
+                    android:hint="Other Details" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/medhist_drugallery_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/drug_allergy_icon"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/sp_18"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="Drug Allergies"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/medhist_drugallery_down_image"
+                    android:src="@mipmap/down_arrow_circle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/drug_allery_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_5"
+                android:visibility="gone"
+                android:background="@color/light_bg7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/drug_allery_clear"
+                            android:layout_gravity="left"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/cancel_icon"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CLEAR ALL"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/drug_allery_load"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/load_icon_primary"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LOAD DATA"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_drug_allery_frequent_layout"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Frequently Used"
+                            android:visibility="gone"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:id="@+id/medhist_drugallery_freq_recyclerview">
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/medhist_add_drug_allergy"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_5">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/search_icon_primary"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dp_15"
+                            android:textSize="@dimen/sp_16"
+                            android:text="Add Drugs"/>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:id="@+id/medhist_drugallery_recycler">
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/medhist_drugabuse_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/drug_abuse_icon"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/sp_18"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="Drug Abuse"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/medhist_drugabuse_down_image"
+                    android:src="@mipmap/down_arrow_circle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/drug_abuse_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/light_bg7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/drug_abuse_clear"
+                            android:layout_gravity="left"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/cancel_icon"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CLEAR ALL"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/drug_abuse_load"
+                            android:visibility="gone"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/load_icon_primary"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LOAD DATA"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_drug_abuse_frequent_layout"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Frequently Used"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/medhist_drugabuse_freq_recyclerview">
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/medhist_add_drug_abuse"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_5">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/search_icon_primary"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dp_15"
+                            android:textSize="@dimen/sp_16"
+                            android:text="Add Drug Abuse"/>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:id="@+id/medhist_drugabuse_recycler">
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medhist_familyhistory_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_button"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/family_history_icon"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/sp_18"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="Family History"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/medhist_familyhistory_down_image"
+                    android:src="@mipmap/down_arrow_circle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/familyhistory_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/light_bg7">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/family_history_clear"
+                            android:layout_gravity="left"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/cancel_icon"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CLEAR ALL"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:id="@+id/family_history_load"
+                            android:visibility="gone"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:background="@color/light_gray1">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@mipmap/load_icon_primary"/>
+
+                            <com.medisensehealth.fdccontributor.views.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LOAD DATA"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:textSize="@dimen/sp_16"
+                                android:textColor="@color/textPrimary"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/medhist_familyhistory_frequent_layout"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Frequently Used"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/medhist_familyhistory_freq_recyclerview">
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/medhist_add_familyhistory"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dp_5">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/search_icon_primary"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dp_15"
+                            android:textSize="@dimen/sp_16"
+                            android:text="Add Family History"/>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:id="@+id/medhist_familyhistory_recycler">
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/medhist_submit"
+                android:text="SUBMIT"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:layout_margin="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

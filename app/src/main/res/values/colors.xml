@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6713a0</color>
+    <color name="colorPrimaryDark">#6713a0</color>
+    <color name="colorAccent">#6713a0</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="textPrimary">#000000</color>
+    <color name="textYellow">#fee916</color>
+
+    <color name="footer_bg">#e0e0e0</color>
+    <color name="feeds_bg">#eeeeee</color>
+    <color name="textTitle">#6713a0</color>
+    <color name="textSubTitle">#a5a4a5</color>
+    <color name="textColor">#606060</color>
+
+    <color name="status_red">#e8212a</color>
+    <color name="status_yellow">#e3b600</color>
+    <color name="status_green">#5b9902</color>
+    <color name="status_saffron">#FFA500</color>
+    <color name="table_row_odd">#FFFFFF</color>
+    <color name="patient_details_bg">#f1f1f1</color>
+    <color name="row_color">#f5f5f5</color>
+    <color name="header_tab_bg">#f3f3f3</color>
+    <color name="row_even_color">#f5f4f4</color>
+    <color name="light_bg7">#fceff6</color>
+    <color name="contrast">#efe5ea</color>
+    <color name="gray1">#a3a3a3</color>
+    <color name="primaryGold">#ffb400</color>
+    <color name="light_gray1">#eaeaea</color>
+    <color name="light_grey">#f6f6f6</color>
+
+    <!-- EMR Refresh -->
+    <color name="circular_progress_default_progress">#bada55</color>
+    <color name="circular_progress_default_background">#787878</color>
+    <color name="circular_progress_default_title">#bada55</color>
+    <color name="circular_progress_default_subtitle">#D1D1D1</color>
+
+    <color name="ocean_breeze">#78A5A3</color>
+    <color name="warm">#E1B16A</color>
+
+    <color name="waterfall">#68829E</color>
+    <color name="moss">#AEBD38</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+</resources>

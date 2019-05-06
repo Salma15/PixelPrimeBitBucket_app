@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey">
+
+    <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VIEW REPORTS"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:background="@color/contrast"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_16"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/view_reports_refresh"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/refresh_icon"/>
+
+         <LinearLayout
+             android:id="@+id/view_reports_upload"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@color/light_bg7"
+             android:layout_marginLeft="@dimen/dp_5"
+             android:orientation="horizontal"
+             android:paddingLeft="@dimen/dp_10"
+             android:paddingRight="@dimen/dp_10"
+             android:paddingTop="@dimen/dp_5"
+             android:paddingBottom="@dimen/dp_5"
+             android:gravity="center_vertical">
+             <ImageView
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:src="@mipmap/upload_icon"/>
+
+             <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Upload Reports"
+                 android:textColor="@color/colorPrimary"
+                 android:layout_marginLeft="@dimen/dp_5"
+                 android:textSize="@dimen/sp_16"/>
+         </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_reports_sendlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/light_bg7"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/send_link_icon"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send Link"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:textSize="@dimen/sp_16"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/upload_report_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_reports_upload_recyclerview"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view_reports_cancel"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="Cancel"
+                    android:layout_gravity="right"
+                    android:background="@color/light_bg7"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingRight="@dimen/sp_12"
+                    android:layout_marginRight="@dimen/dp_20"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view_reports_submit"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="Submit Reports"
+                    android:layout_gravity="right"
+                    android:background="@color/light_bg7"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingRight="@dimen/sp_12"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/view_reports_recyclerview"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

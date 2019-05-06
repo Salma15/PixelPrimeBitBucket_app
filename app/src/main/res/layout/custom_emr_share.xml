@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/emr_close"
+            android:src="@mipmap/close_icon"
+            android:layout_gravity="right"/>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Who do you want to share with?"
+            android:gravity="center"
+            android:textSize="@dimen/sp_16"
+            android:background="@color/light_bg7"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share_rg"
+                android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/emr_share_rb_patient"
+                android:text="Patients"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_12"
+                android:gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_5"/>
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/emr_share_rb_diagno"
+                android:text="Diagnostic Center"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_12"
+                android:gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_5"/>
+
+          <!--  <android.support.v7.widget.AppCompatRadioButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/emr_share_rb_pharma"
+                android:text="Pharmacy"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/sp_10"
+                android:gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_5"/>
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/emr_share_rb_others"
+                    android:text="Others"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_10"
+                    android:gravity="center_vertical"/>-->
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share1_rg"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/emr_share_rb_pharma"
+                    android:text="Pharmacy"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_12"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp_5"/>
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/emr_share_rb_others"
+                    android:text="Others"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_12"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp_5"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:gravity="center"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emr_share_what_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emr_share_patient_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What would you like to share?"
+                android:gravity="center"
+                android:textSize="@dimen/sp_16"
+                android:background="@color/light_bg7"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:textColor="@color/colorPrimary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/emr_share_patient_rg"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/emr_share_rb_emr_only"
+                    android:text="Complete EMR"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp_10"/>
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/emr_share_rb_presc_only"
+                    android:text="Prescriptions Only"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/sp_14"
+                    android:gravity="center_vertical"/>
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share_other_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What would you like to share?"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16"
+                    android:background="@color/light_bg7"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/emr_share_other_rg"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/emr_share_other_rb_emr_only"
+                            android:text="Complete EMR"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="@dimen/dp_10"/>
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/emr_share_other_rb_presc_only"
+                            android:text="Prescriptions Only"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_14"
+                            android:gravity="center_vertical"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share_diagnosis_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To whom you would like to share?"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16"
+                    android:background="@color/light_bg7"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20">
+
+                    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                        android:id="@+id/searchMultiSpinner_diagnostics"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        app:hintText="-- Select Diagnostic Center --" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/emr_share_diagnosis_refresh"
+                        android:src="@mipmap/refresh_icon"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emr_share_pharma_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To whom you would like to share?"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_16"
+                    android:background="@color/light_bg7"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textColor="@color/colorPrimary"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20">
+
+                    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                        android:id="@+id/searchMultiSpinner_pharmacy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        app:hintText="-- Select Retail Pharmacy --" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/emr_share_pharmacy_refresh"
+                        android:src="@mipmap/refresh_icon"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

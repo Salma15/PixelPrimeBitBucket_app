@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.mypatientOphthalmology.RefreshOphthalEMRActivity"
+    tools:showIn="@layout/fragment_ophthal_emr_refresh">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_10">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Updating EMR Contents"
+                    android:textSize="@dimen/sp_16"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:background="@color/light_bg7"/>
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Note: It will take several minutes to complete the process. Until then do not press 'Back' button or close the application."
+                    android:textSize="@dimen/sp_12"
+                    android:gravity="center"
+                    android:textColor="@color/red"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Chief Medical Complaints"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/chief_complaint_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/medcomplaint_done"
+                            android:text="Step 1: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lids"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/lids_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/lids_done"
+                            android:text="Step 2: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Conjuctiva"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/conjuctiva_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/conjuctiva_done"
+                            android:text="Step 3: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sclera"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/sclera_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sclera_done"
+                            android:text="Step 4: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Cornea Anterior"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/cornea_anterior_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cornea_anterior_done"
+                            android:text="Step 5: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cornea Posterior"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/cornea_posterior_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cornea_posterior_done"
+                            android:text="Step 6: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Anterior Chamber"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/anterior_chamber_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/anterior_chamber_done"
+                            android:text="Step 7: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Iris"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/iris_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/iris_done"
+                            android:text="Step 8: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Pupil"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/pupil_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/pupil_done"
+                            android:text="Step 9: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Angle of Anterior Chamber"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/angle_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/angle_done"
+                            android:text="Step 10: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Lens"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:id="@+id/lens_progress"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        app:duration="6000"
+                        app:inner_alpha_factor="0.3"
+                        app:left_sided_color="@color/moss"
+                        app:right_sided_color="@color/warm"
+                        app:stroke_width="4dp"
+                        app:text_color="@color/waterfall"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:longClickable="false"
+                        android:gravity="center"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lens_done"
+                        android:text="Step 11: Done"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/sp_16"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Viterous"
+                        android:gravity="center"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="@dimen/sp_16"/>
+
+                    <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:id="@+id/viterous_progress"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        app:duration="6000"
+                        app:inner_alpha_factor="0.3"
+                        app:left_sided_color="@color/moss"
+                        app:right_sided_color="@color/warm"
+                        app:stroke_width="4dp"
+                        app:text_color="@color/waterfall"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:longClickable="false"
+                        android:gravity="center"/>
+
+                    <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/viterous_done"
+                        android:text="Step 12: Done"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/sp_16"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Fundus"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/fundus_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fundus_done"
+                            android:text="Step 13: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Investigations"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/investigation_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/investigation_done"
+                            android:text="Step 14: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Diagnosis"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/diagnosis_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/diagnosis_done"
+                            android:text="Step 15: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Treatment"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/treatment_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/treatment_done"
+                            android:text="Step 16: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Prescription"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16" />
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/prescription_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/precription_done"
+                            android:text="Step 17: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Drug Allergy"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/allergy_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/allergy_done"
+                            android:text="Step 18: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Drug Abuse"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/abuse_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/abuse_done"
+                            android:text="Step 19: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Family History"
+                            android:gravity="center"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="@dimen/sp_16"/>
+
+                        <com.arbelkilani.bicoloredprogress.BiColoredProgress
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:id="@+id/history_progress"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerInParent="true"
+                            app:duration="6000"
+                            app:inner_alpha_factor="0.3"
+                            app:left_sided_color="@color/moss"
+                            app:right_sided_color="@color/warm"
+                            app:stroke_width="4dp"
+                            app:text_color="@color/waterfall"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:longClickable="false"
+                            android:gravity="center"/>
+
+                        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/history_done"
+                            android:text="Step 20: Done"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/sp_16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/gray" />
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/continue_btn"
+                    android:text="CONTINUE"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_10"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

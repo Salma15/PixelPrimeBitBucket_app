@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:id="@+id/home_list_layout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30"
+            android:background="@color/feeds_bg"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/feeds_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:visibility="visible"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/blogs_empty_img" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/youtube_layout">
+
+                <com.google.android.youtube.player.YouTubeThumbnailView
+                    android:id="@+id/youtube_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout_over_youtube_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/btnYoutube_player"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/youtube_play" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.70"
+            android:paddingLeft="@dimen/dp_4"
+            android:padding="@dimen/dp_10"
+            android:background="@color/feeds_bg"
+            android:orientation="vertical">
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/feeds_title"
+                android:text="Blog Title"
+                android:textSize="@dimen/sp_12"
+                android:maxLines="1"
+                android:textColor="@color/textTitle"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_2"
+                android:id="@+id/feeds_date"
+                android:text="Posted on: 12-01-2018"
+                android:textColor="@color/textSubTitle"
+                android:textSize="@dimen/sp_10"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/feeds_description"
+                android:paddingTop="@dimen/dp_2"
+                android:text="Descriptions"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/textColor"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextViewItalicBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feeds_readmore"
+                android:text="Read More >> "
+                android:textSize="@dimen/sp_10"
+                android:layout_gravity="right"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

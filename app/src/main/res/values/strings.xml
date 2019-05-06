@@ -1,0 +1,252 @@
+<resources>
+    <string name="app_name">PixelPrime</string>
+
+    <string name="gcm_server_api">AIzaSyAbJc6srTVmzg1ZLOSFr5l0E7Lxk7cOez8</string>
+    <string name="gcm_server_senderid">72545599029</string>
+
+    <!-- Doctor pROFILE-->
+    <string name="docprofile_specialization">SPECIALIZATION</string>
+    <string name="docprofile_qualification">QUALIFICATION</string>
+    <string name="docprofile_fellowships">FELLOWSHIPS</string>
+    <string name="docprofile_areaofInterest">AREA OF INTEREST</string>
+    <string name="docprofile_experience">EXPERIENCE</string>
+    <string name="docprofile_personalcontribution">PERSONAL CONTRIBUTION</string>
+    <string name="docprofile_address">HOSPITAL ADDRESS</string>
+
+    <!-- Patient View Details Labels Ends-->
+    <string name="patient_enquiry_date">Enquiry Date</string>
+    <string name="patient_id">Patient Id</string>
+    <string name="p_status">Status</string>
+    <string name="p_name">Patient Name</string>
+    <string name="p_age">Age</string>
+    <string name="p_gen">Gender</string>
+    <string name="p_location">Location</string>
+    <string name="p_mobile">Mobile</string>
+    <string name="p_chief_medcomp">Chief Medical Complaint</string>
+    <string name="p_weight">Weight</string>
+    <string name="p_maritalstatus">Marital Status</string>
+    <string name="p_profession">Profession</string>
+    <string name="p_hypertension">Hypertension</string>
+    <string name="p_diabetes">Diabetes</string>
+    <string name="p_contactperson">Contact Person</string>
+    <string name="p_email">Email</string>
+    <string name="p_address">Address</string>
+    <string name="p_city">City</string>
+    <string name="p_state">State</string>
+    <string name="p_country">Country</string>
+    <string name="p_specialization">Specialization</string>
+    <string name="p_treating_doc">Treating Doctor</string>
+    <string name="p_treating_hosp">Treating Hospital</string>
+    <string name="p_treating_brief_description">Brief Description</string>
+    <string name="p_query_todoc">Query to the Doctor</string>
+
+    <string name="quiz_view">*T &amp; C Apply</string>
+
+    <string name="video_url_hint">Add Youtube Video URL \nLink - www.youtube.com/watch?v=rdmycu13Png</string>
+
+    <string name="GCM_SENDERID">776257490757</string>
+    <string name="GCM_APIKEY">AIzaSyDdo8O-rCJnAIbjc1JcoDr6G12QkdrpN80</string>
+
+
+    <string-array name="menuOptions">
+        <item> Add Visit </item>
+        <item> View Old Visits </item>
+        <item> Medical History </item>
+        <item> Trend Analysis </item>
+        <item> Fundus Images </item>
+        <item> View Reports </item>
+    </string-array>
+
+    <string-array name="smokingArray">
+        <item>--Select--</item>
+        <item>Non-smoker</item>
+        <item>Passive smoker</item>
+        <item>5 Cig a day</item>
+        <item>10 Cig a day</item>
+        <item>20 Cig a day</item>
+        <item> > 20 Cig a day</item>
+    </string-array>
+
+    <string-array name="alcoholicArray">
+        <item>--Select--</item>
+        <item>Non-alcoholic</item>
+        <item>Moderate</item>
+        <item>Chronic</item>
+    </string-array>
+
+    <string-array name="examination_results">
+        <item>--Select--</item>
+        <item>Normal</item>
+        <item>Abnormal</item>
+    </string-array>
+
+    <!-- EMR Refresh interpolators -->
+    <string name="gain">Loading...</string>
+    <string name="bounce">BounceInterpolator</string>
+    <string name="fastOutSlowIn">FastOutSlowInInterpolator</string>
+    <string name="fastOutLinearIn">FastOutSlowInInterpolator</string>
+    <string name="overshoot">OvershootInterpolator</string>
+    <string name="accelerateDecelerate">AccelerateDecelerateInterpolator</string>
+    <string name="anticipate">AnticipateInterpolator</string>
+
+
+    <string-array name="distance_vision_results">
+        <item>--Select--</item>
+        <!--<item>6/60</item>
+        <item>6/36</item>
+        <item>6/24</item>
+        <item>6/18</item>
+        <item>6/12</item>
+        <item>6/9</item>
+        <item>6/6</item>-->
+        <item>6/6</item>
+        <item>6/6p</item>
+        <item>6/9</item>
+        <item>6/9p</item>
+        <item>6/12</item>
+        <item>6/12p</item>
+        <item>6/18</item>
+        <item>6/18p</item>
+        <item>6/24</item>
+        <item>6/24p</item>
+        <item>6/36</item>
+        <item>6/36p</item>
+        <item>6/60</item>
+        <item>6/60p</item>
+        <item>HM+</item>
+        <item>FC @1m</item>
+        <item>FC @2m</item>
+        <item>FC @50cm</item>
+        <item>PL+</item>
+        <item>PL-</item>
+    </string-array>
+
+    <string-array name="near_vision_results">
+        <item>--Select--</item>
+        <item>N. 36</item>
+        <item>N. 18</item>
+        <item>N. 12</item>
+        <item>N. 10</item>
+        <item>N. 8</item>
+        <item>N. 6</item>
+    </string-array>
+
+    <string-array name="IOP_results">
+        <item>--Select--</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="prescTimingsArray">
+        <item>--Select--</item>
+        <item>Before food</item>
+        <item>After food</item>
+        <item>Before Breakfast</item>
+        <item>After Breakfast</item>
+        <item>Before lunch</item>
+        <item>After Lunch</item>
+        <item>Before dinner</item>
+        <item>After Dinner</item>
+        <item>When needed</item>
+    </string-array>
+
+</resources>

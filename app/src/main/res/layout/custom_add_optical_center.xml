@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/light_bg7"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:gravity="right">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add New Optical Center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/optical_close"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:src="@mipmap/close_icon"/>
+
+            </LinearLayout>
+
+
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_name"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="Optical Name"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_contactperson"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="Contact Person"
+                android:textSize="@dimen/sp_14"
+                android:singleLine="true"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_email"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/sp_14"
+                android:singleLine="true"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_mobile"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="Mobile"
+                android:inputType="phone"
+                android:textSize="@dimen/sp_14"
+                android:singleLine="true"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_city"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="City"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_state"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="State"
+                android:textSize="@dimen/sp_14"
+                android:singleLine="true"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_optical_country"
+                android:layout_marginTop="@dimen/dp_20"
+                android:hint="Country"
+                android:textSize="@dimen/sp_14"
+                android:singleLine="true"
+                android:background="@drawable/edittext_input_line_primary"
+                android:textColor="@color/textPrimary"
+                android:textColorHint="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_30"
+                android:gravity="center">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_optical_submit"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingRight="@dimen/sp_12"
+                    android:gravity="center_vertical"
+                    android:text="SUBMIT"
+                    android:layout_gravity="center"
+                    android:background="@color/light_bg7"
+                    android:textColor="@color/colorPrimary"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

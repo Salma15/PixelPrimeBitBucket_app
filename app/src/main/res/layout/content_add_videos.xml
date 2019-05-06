@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp_20">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/colorPrimary"
+                    android:id="@+id/blog_vidcreate_title_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/blog_vidcreate_title"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:textColorHint="@color/colorAccent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_18"
+                        android:singleLine="false"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:hint="Title" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/colorPrimary"
+                    android:id="@+id/blog_vidcreate_url_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/blog_vidcreate_url"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:textColorHint="@color/colorAccent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_18"
+                        android:singleLine="false"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:hint="Add youtube video URL link" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/colorPrimary"
+                    android:id="@+id/blog_vidcreate_description_layout" >
+
+                    <com.medisensehealth.fdccontributor.views.CustomEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/blog_vidcreate_description"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:textColorHint="@color/colorAccent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_18"
+                        android:singleLine="false"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:hint="Description" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColorHint="@color/colorPrimary"
+                    android:id="@+id/blog_vidcreate_tags_layout" >
+
+                    <MultiAutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/blog_vidcreate_tags"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:textColorHint="@color/colorAccent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_18"
+                        android:singleLine="false"
+                        android:background="@drawable/edittext_input_line_primary"
+                        android:hint="Tags" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/blog_vidcreate_submit"
+                    android:layout_margin="@dimen/dp_20"
+                    android:text="Publish"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:background="@drawable/round_button_primary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

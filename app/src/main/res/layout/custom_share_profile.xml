@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/dp_18"
+    android:paddingTop="@dimen/dp_18"
+    android:paddingLeft="@dimen/dp_6"
+    android:paddingRight="@dimen/dp_6" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/warning_image" >
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/shareprof__title"
+            android:text="Share Profile"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_10"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/textColor"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:id="@+id/share_profile_mobile_layout" >
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/share_profile_mobile"
+                android:inputType="textNoSuggestions|phone"
+                android:singleLine="true"
+                android:maxLength="10"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:hint="Mobile No." />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ( OR )"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_gravity="center"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/textColor"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:id="@+id/share_profile_email_layout" >
+
+            <com.medisensehealth.fdccontributor.views.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/share_profile_email"
+                android:inputType="textNoSuggestions|textEmailAddress"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/edittext_input_line_primary"
+                android:hint="Email Address" />
+        </android.support.design.widget.TextInputLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ( OR )"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/share_profile_mycontact"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/share_app_icon"/>
+
+            <com.medisensehealth.fdccontributor.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:text="Share with my contacts"/>
+        </LinearLayout>
+
+        <com.medisensehealth.fdccontributor.views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND"
+            android:id="@+id/share_profile_submit"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_6"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/round_button_primary"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

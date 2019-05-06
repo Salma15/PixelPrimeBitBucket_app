@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/frquent_item"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/dp_10"
+    android:orientation="vertical">
+
+    <com.medisensehealth.fdccontributor.views.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frequents List"
+        android:background="@drawable/round_edge_layout_safron"
+        android:maxLength="10"
+        android:gravity="center"
+        android:id="@+id/frquent_item_name"
+        android:textSize="@dimen/sp_12"
+        android:paddingLeft="@dimen/dp_6"
+        android:paddingRight="@dimen/dp_6"
+        android:paddingTop="@dimen/dp_1"
+        android:paddingBottom="@dimen/dp_1"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+</LinearLayout>
