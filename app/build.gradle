@@ -6,8 +6,8 @@ android {
         applicationId "com.medisensehealth.fdccontributor"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 15
-        versionName "1.14"
+        versionCode 16
+        versionName "1.15"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
