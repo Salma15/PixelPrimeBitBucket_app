@@ -20,12 +20,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
                 android:background="@color/contrast">
 
                 <com.medisensehealth.fdccontributor.views.CustomTextViewBold
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:text="Medical History"
                     android:textSize="@dimen/dp_18"
                     android:gravity="center"
@@ -33,9 +36,18 @@
                     android:paddingBottom="@dimen/dp_5"
                     android:textColor="@color/colorPrimary"/>
 
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/status_red"
+                    android:gravity="center"
+                    android:text="Note: Below all the fields are optional"/>
+
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
                     android:id="@+id/medhist_refresh"
                     android:layout_marginRight="@dimen/dp_10"
                     android:src="@mipmap/refresh_icon"/>
@@ -56,6 +68,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/status_red"
                 android:gravity="center"
+                android:visibility="gone"
                 android:text="Note: Below all the fields are optional"/>
 
             <LinearLayout
@@ -169,6 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:background="@drawable/edittext_input_line_primary"
                 android:layout_marginTop="@dimen/dp_10">
 
@@ -295,6 +309,246 @@
                         android:text="Yes" />
                     <RadioButton
                         android:id="@+id/radiodiabetesNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Cholesterol "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioCholesterol"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioCholesterolYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radioCholesterolNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="ARTHRITIS "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioArthritis"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioArthritisYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radioArthritisNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="IHD "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioIHD"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioIHDYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radioIHDNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="ASTHAMA "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioAsthama"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioAsthamaYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radioAsthamaNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="No" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/edittext_input_line_primary">
+
+                <com.medisensehealth.fdccontributor.views.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="THY "
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorPrimary"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioTHY"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioTHYYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        android:text="Yes" />
+                    <RadioButton
+                        android:id="@+id/radioTHYNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_20"

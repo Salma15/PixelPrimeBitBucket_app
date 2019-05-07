@@ -58,6 +58,7 @@ import com.medisensehealth.fdccontributor.R;
 import com.medisensehealth.fdccontributor.database.MedisensePracticeDB;
 import com.medisensehealth.fdccontributor.network.APIClass;
 import com.medisensehealth.fdccontributor.utils.AppController;
+import com.medisensehealth.fdccontributor.utils.AppUtils;
 import com.medisensehealth.fdccontributor.utils.HCConstants;
 import com.medisensehealth.fdccontributor.utils.ShareadPreferenceClass;
 import com.medisensehealth.fdccontributor.utils.Utils;
@@ -155,6 +156,12 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
     List<OphthalViterous> viterousListArraylist;          /* Examinations -  Viterous List */
     List<OphthalFundus> fundusListArraylist;          /* Examinations -  Fundus List */
 
+
+    boolean CHIEF_MED_COMP_STATUS = false,  LIDS_STATUS = false, CONJUCTIVA_STATUS = false, SCALERA_STATUS = false, CORNEA_ANTERIOR_STATUS = false,
+            CORNEA_POSTERIOR_STATUS = false, ANT_CHAMBER_STATUS = false, IRIS_STATUS = false, PUPIL_STATUS = false, ANGLE_ANT_STATUS = false,
+            LENS_STATUS = false, VITEROUS_STATUS = false, FUNDUS_STATUS = false, INVESTIGATIONS_STATUS = false, DIAGNOSIS_STATUS = false,
+            TREATMENT_STATUS = false, PRESCRIPTION_STATUS = false, DRUG_ALEERGY_STATUS = false,DRUG_ABUSE_STATUS = false, FAMILY_HISTORY_STATUS = false;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_ophthal_emr_refresh);
@@ -170,6 +177,11 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
         REPORT_PHOTOS = new ArrayList<String>();
         EPISODE_LIST_TEMP = new ArrayList<>();
         gson = new Gson();
+
+        CHIEF_MED_COMP_STATUS = false;  LIDS_STATUS = false; CONJUCTIVA_STATUS = false; SCALERA_STATUS = false; CORNEA_ANTERIOR_STATUS = false;
+        CORNEA_POSTERIOR_STATUS = false; ANT_CHAMBER_STATUS = false; IRIS_STATUS = false; PUPIL_STATUS = false; ANGLE_ANT_STATUS = false;
+        LENS_STATUS = false; VITEROUS_STATUS = false; FUNDUS_STATUS = false; INVESTIGATIONS_STATUS = false; DIAGNOSIS_STATUS = false;
+        TREATMENT_STATUS = false; PRESCRIPTION_STATUS = false; DRUG_ALEERGY_STATUS = false; DRUG_ABUSE_STATUS = false; FAMILY_HISTORY_STATUS = false;
 
         chiefcomplaintListArraylist = new ArrayList<>();
         freqComplaintListArraylist = new ArrayList<>();
@@ -417,6 +429,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            CHIEF_MED_COMP_STATUS = true;
                             refreshAllContent(10000, 500, response);
                             //   Log.d(Utils.TAG, response.toString());
                         }
@@ -466,6 +479,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                 // Log.d(Utils.TAG, response.toString());
                 mBiColoredProgress.setProgress(100f);
                 medcomplaint_done.setVisibility(View.VISIBLE);
+
                 new getJsonLids(RefreshOphthalEMRActivity.this).execute();
 
             }
@@ -543,6 +557,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                            //  Log.d(Utils.TAG, response.toString());
+                            LIDS_STATUS = true;
                             refreshAllLids(10000, 500, response);
                         }
                     },
@@ -591,6 +606,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                 // Log.d(Utils.TAG, response.toString());
                 mBiColoredProgressLids.setProgress(100f);
                 lids_done.setVisibility(View.VISIBLE);
+
                 new getJsonConjuctiva(RefreshOphthalEMRActivity.this).execute();
             }
         }.start();
@@ -652,6 +668,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            CONJUCTIVA_STATUS = true;
                             refreshAllConjuctivaContent(10000, 500, response);
                         }
                     },
@@ -759,6 +776,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            SCALERA_STATUS = true;
                             refreshAllScleraContent(10000, 500, response);
                         }
                     },
@@ -866,6 +884,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            CORNEA_ANTERIOR_STATUS = true;
                             refreshAllCorneaAnteriorContent(10000, 500, response);
                         }
                     },
@@ -913,7 +932,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                 mBiColoredProgressCorneaAnterior.setProgress(100f);
                 cornea_anterior_done.setVisibility(View.VISIBLE);
 
-                 new getJsonCorneaPosterior(RefreshOphthalEMRActivity.this).execute();
+                new getJsonCorneaPosterior(RefreshOphthalEMRActivity.this).execute();
             }
         }.start();
     }
@@ -973,6 +992,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            CORNEA_POSTERIOR_STATUS = true;
                             refreshAllCorneaPosteriorContent(10000, 500, response);
                         }
                     },
@@ -1080,6 +1100,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            ANT_CHAMBER_STATUS = true;
                             refreshAllAnteriorChamberContent(10000, 500, response);
                         }
                     },
@@ -1187,6 +1208,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            IRIS_STATUS = true;
                             refreshAllIrisContent(10000, 500, response);
                         }
                     },
@@ -1294,6 +1316,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            PUPIL_STATUS = true;
                             refreshAllPupilContent(10000, 500, response);
                         }
                     },
@@ -1401,6 +1424,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            ANGLE_ANT_STATUS = true;
                             refreshAllAngleContent(10000, 500, response);
                         }
                     },
@@ -1508,6 +1532,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            LENS_STATUS = true;
                             refreshAllLensContent(10000, 500, response);
                         }
                     },
@@ -1615,6 +1640,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            VITEROUS_STATUS = true;
                             refreshAllViterousContent(10000, 500, response);
                         }
                     },
@@ -1722,6 +1748,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            FUNDUS_STATUS = true;
                             refreshAllFundusContent(10000, 500, response);
                         }
                     },
@@ -1832,6 +1859,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            INVESTIGATIONS_STATUS = true;
                             refreshAllInvestigationContent(10000, 500, response);
                         }
                     },
@@ -2015,6 +2043,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            DIAGNOSIS_STATUS = true;
                             refreshAllDiagnosisContent(10000, 500, response);
                         }
                     },
@@ -2119,6 +2148,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             //  Log.d(Utils.TAG, response.toString());
+                            TREATMENT_STATUS = true;
                             refreshAllTreatmentContent(10000, 500, response);
                         }
                     },
@@ -2246,6 +2276,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                              Log.d(Utils.TAG, "presclist: "+ response.toString());
+                            PRESCRIPTION_STATUS = true;
                             refreshAllPrescriptionContent(10000, 500, response);
                         }
                     },
@@ -2426,6 +2457,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            DRUG_ALEERGY_STATUS = true;
                             refreshAllDrugAllergyContent(10000, 500, response);
                         }
                     },
@@ -2534,6 +2566,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             // Log.d(Utils.TAG, response.toString());
+                            DRUG_ABUSE_STATUS = true;
                             refreshAllDrugAbuseContent(10000, 500, response);
                         }
                     },
@@ -2659,6 +2692,7 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
                             Log.d(Utils.TAG, response.toString());
+                            FAMILY_HISTORY_STATUS = true;
                             refreshAllFamilyHistoryContent(10000, 500, response);
                         }
                     },
@@ -2760,6 +2794,94 @@ public class RefreshOphthalEMRActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(Utils.TAG, " ********** Resume **************");
+
+        if(CHIEF_MED_COMP_STATUS) {
+          //  Log.d(Utils.TAG, " CHIEF_MED_COMP_STATUS TRUE");
+            mBiColoredProgress.setProgress(100f);
+        }
+
+        if(LIDS_STATUS) {
+            mBiColoredProgressLids.setProgress(100f);
+        }
+
+        if(CONJUCTIVA_STATUS) {
+            mBiColoredProgressConjuctiva.setProgress(100f);
+        }
+
+        if(SCALERA_STATUS) {
+            mBiColoredProgressSclera.setProgress(100f);
+        }
+
+        if(CORNEA_ANTERIOR_STATUS) {
+            mBiColoredProgressCorneaAnterior.setProgress(100f);
+        }
+
+        if(CORNEA_POSTERIOR_STATUS) {
+            mBiColoredProgressCorneaPosterior.setProgress(100f);
+        }
+
+        if(ANT_CHAMBER_STATUS) {
+            mBiColoredProgressAnteriorChamber.setProgress(100f);
+        }
+
+        if(IRIS_STATUS) {
+            mBiColoredProgressIris.setProgress(100f);
+        }
+
+        if(PUPIL_STATUS) {
+            mBiColoredProgressPupil.setProgress(100f);
+        }
+
+        if(ANGLE_ANT_STATUS) {
+            mBiColoredProgressAngle.setProgress(100f);
+        }
+
+        if(LENS_STATUS) {
+            mBiColoredProgressLens.setProgress(100f);
+        }
+
+        if(VITEROUS_STATUS) {
+            mBiColoredProgressViterous.setProgress(100f);
+        }
+
+        if(FUNDUS_STATUS) {
+            mBiColoredProgressFundus.setProgress(100f);
+        }
+
+        if(INVESTIGATIONS_STATUS) {
+            mBiColoredProgressInvestigation.setProgress(100f);
+        }
+
+        if(DIAGNOSIS_STATUS) {
+            mBiColoredProgressDiagnosis.setProgress(100f);
+        }
+
+        if(TREATMENT_STATUS) {
+            mBiColoredProgressTreatment.setProgress(100f);
+        }
+
+        if(PRESCRIPTION_STATUS) {
+            mBiColoredProgressPrescription.setProgress(100f);
+        }
+
+        if(DRUG_ALEERGY_STATUS) {
+            mBiColoredProgressDrugAllergy.setProgress(100f);
+        }
+
+        if(DRUG_ABUSE_STATUS) {
+            mBiColoredProgressDrugAbuse.setProgress(100f);
+        }
+
+        if(FAMILY_HISTORY_STATUS) {
+            mBiColoredProgressFamilyHistory.setProgress(100f);
         }
     }
 }

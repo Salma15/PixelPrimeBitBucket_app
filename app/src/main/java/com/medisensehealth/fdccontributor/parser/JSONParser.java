@@ -3233,9 +3233,13 @@ public class JSONParser {
                                                   List<DrugAllery> patient_drug_allerty_array,
                                                   List<DrugAbuse> patient_drug_abuse_array,
                                                   List<FamilyHistory> patient_family_history_array,
+                                                  String PATIENT_CHOLESTEROL,  String PATIENT_ARTHRITIS,
+                                                  String PATIENT_IHD, String PATIENT_ASTHAMA,  String PATIENT_THY,
                                                   int user_id, String user_login_type) {
 
         Log.d(Utils.TAG, " ************  update Medical History  *************** ");
+        Log.d(Utils.TAG, " user_login_type: "+user_login_type);
+
         try {
 
             MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
@@ -3398,6 +3402,26 @@ public class JSONParser {
 
             if(other_details != null) {
                 builder.addFormDataPart("other_details", other_details);
+            }
+
+            if(PATIENT_CHOLESTEROL != null) {
+                builder.addFormDataPart("patient_cholesterol", PATIENT_CHOLESTEROL);
+            }
+
+            if(PATIENT_ARTHRITIS != null) {
+                builder.addFormDataPart("patient_arthritis", PATIENT_ARTHRITIS);
+            }
+
+            if(PATIENT_IHD != null) {
+                builder.addFormDataPart("patient_ihd", PATIENT_IHD);
+            }
+
+            if(PATIENT_ASTHAMA != null) {
+                builder.addFormDataPart("patient_asthama", PATIENT_ASTHAMA);
+            }
+
+            if(PATIENT_THY != null) {
+                builder.addFormDataPart("patient_thy", PATIENT_THY);
             }
 
             RequestBody requestBody = builder.build();

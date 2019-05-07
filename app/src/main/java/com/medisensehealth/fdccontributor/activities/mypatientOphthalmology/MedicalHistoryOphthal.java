@@ -88,12 +88,12 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
 
     String PATIENT_NAME, PATIENT_AGE, PATIENT_GENDER, PATIENT_MOBILE, PATIENT_EMAIL, PATIENT_CITY, PATIENT_ADDRESS, PATIENT_STATE, PATIENT_COUNTRY,
             PATIENT_HEIGHT, PATIENT_WEIGHT, PATIENT_HYPERTENSION, PATIENT_DIABETES, PATIENT_SMOKING, PATIENT_ALCOHOL, PATIENT_DRUG_ABUSE, PATIENT_OTHER_DETAILS,
-            PATIENT_FAMILY_HISTORY, PATIENT_PREV_INTERVENTIONS, PATIENT_NEURO_ISSUES, PATIENT_KIDNEY_ISSUES;
+            PATIENT_FAMILY_HISTORY, PATIENT_PREV_INTERVENTIONS, PATIENT_NEURO_ISSUES, PATIENT_KIDNEY_ISSUES, PATIENT_CHOLESTEROL = "", PATIENT_ARTHRITIS = "", PATIENT_IHD = "", PATIENT_ASTHAMA = "", PATIENT_THY = "";
 
     CustomEditText _edt_weight, _edt_height, _edt_height_inch, _edt_prev_intervention, _edt_stroke, _edt_kidney_issues, _edt_otherdetails;
     CustomTextView _txt_bmi, _txt_bmi_status, submit_btn;
-    RadioGroup rg_hypertension, rg_diabetes;
-    RadioButton rb_hyperYes, rb_hyperNo, rb_diabetesYes, rb_diabetesNo;
+    RadioGroup rg_hypertension, rg_diabetes, rg_cholesterol, rg_arthritis, rg_ihd, rg_asthama, rg_thy;
+    RadioButton rb_hyperYes, rb_hyperNo, rb_diabetesYes, rb_diabetesNo, rb_cholesterolYes, rb_cholesterolNo, rb_arthritisYes, rb_arthritisNo, rb_ihdYes, rb_ihdNo, rb_asthamaYes, rb_asthamaNo, rb_thyYes, rb_thyNo;
     Spinner smoking_spinner, alcohol_spinner;
 
     // Drug Allery
@@ -224,7 +224,7 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
 
         // InitializeViews
         _edt_weight = (CustomEditText) getActivity().findViewById(R.id.medhist_weight);
-        _edt_height = (CustomEditText) getActivity().findViewById(R.id.medhist_height);
+        _edt_height = (CustomEditText) getActivity().findViewById(R.id.medhist_height_cms);
         _edt_height_inch = (CustomEditText) getActivity().findViewById(R.id.medhist_height_inches);
         _txt_bmi = (CustomTextView) getActivity().findViewById(R.id.medhist_bmi);
         _txt_bmi_status = (CustomTextView) getActivity().findViewById(R.id.medhist_bmi_status);
@@ -244,6 +244,31 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
         submit_btn.setOnClickListener(this);
         refresh_btn = (ImageView)  getActivity().findViewById(R.id.medhist_refresh);
         refresh_btn.setOnClickListener(this);
+
+        // Cholesterol
+        rg_cholesterol = (RadioGroup) getActivity().findViewById(R.id.radioCholesterol);
+        rb_cholesterolYes = (RadioButton) getActivity().findViewById(R.id.radioCholesterolYes);
+        rb_cholesterolNo = (RadioButton) getActivity().findViewById(R.id.radioCholesterolNo);
+
+        // Arthritis
+        rg_arthritis = (RadioGroup) getActivity().findViewById(R.id.radioArthritis);
+        rb_arthritisYes = (RadioButton) getActivity().findViewById(R.id.radioArthritisYes);
+        rb_arthritisNo = (RadioButton) getActivity().findViewById(R.id.radioArthritisNo);
+
+        // IHD
+        rg_ihd = (RadioGroup) getActivity().findViewById(R.id.radioIHD);
+        rb_ihdYes = (RadioButton) getActivity().findViewById(R.id.radioIHDYes);
+        rb_ihdNo = (RadioButton) getActivity().findViewById(R.id.radioIHDNo);
+
+        // ASTHAMA
+        rg_asthama = (RadioGroup) getActivity().findViewById(R.id.radioAsthama);
+        rb_asthamaYes = (RadioButton) getActivity().findViewById(R.id.radioAsthamaYes);
+        rb_asthamaNo = (RadioButton) getActivity().findViewById(R.id.radioAsthamaNo);
+
+        // THY
+        rg_thy = (RadioGroup) getActivity().findViewById(R.id.radioTHY);
+        rb_thyYes = (RadioButton) getActivity().findViewById(R.id.radioTHYYes);
+        rb_thyNo = (RadioButton) getActivity().findViewById(R.id.radioTHYNo);
 
         // Drug Allery Views
         drug_allery_btn = (LinearLayout) getActivity().findViewById(R.id.medhist_drugallery_btn);
@@ -301,6 +326,87 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
             rb_diabetesNo.setChecked(false);
         }
 
+        //Cholesterol
+        if(PATIENT_CHOLESTEROL.equalsIgnoreCase("1")) {
+            rb_cholesterolYes.setChecked(true);
+        }
+        else if(PATIENT_CHOLESTEROL.equalsIgnoreCase("2")) {
+            rb_cholesterolNo.setChecked(true);
+        }
+        else if(PATIENT_CHOLESTEROL.equalsIgnoreCase("0")) {
+            rb_cholesterolYes.setChecked(false);
+            rb_cholesterolNo.setChecked(false);
+        }
+        else {
+            rb_cholesterolYes.setChecked(false);
+            rb_cholesterolNo.setChecked(false);
+        }
+
+        // ARTHRITIS
+        if(PATIENT_ARTHRITIS.equalsIgnoreCase("1")) {
+            rb_arthritisYes.setChecked(true);
+        }
+        else if(PATIENT_ARTHRITIS.equalsIgnoreCase("2")) {
+            rb_arthritisNo.setChecked(true);
+        }
+        else if(PATIENT_ARTHRITIS.equalsIgnoreCase("0")) {
+            rb_arthritisYes.setChecked(false);
+            rb_arthritisNo.setChecked(false);
+        }
+        else {
+            rb_arthritisYes.setChecked(false);
+            rb_arthritisNo.setChecked(false);
+        }
+
+        // IHD
+        if(PATIENT_IHD.equalsIgnoreCase("1")) {
+            rb_ihdYes.setChecked(true);
+        }
+        else if(PATIENT_IHD.equalsIgnoreCase("2")) {
+            rb_ihdNo.setChecked(true);
+        }
+        else if(PATIENT_IHD.equalsIgnoreCase("0")) {
+            rb_ihdYes.setChecked(false);
+            rb_ihdNo.setChecked(false);
+        }
+        else {
+            rb_ihdYes.setChecked(false);
+            rb_ihdNo.setChecked(false);
+        }
+
+        // ASTHAMA
+        if(PATIENT_ASTHAMA.equalsIgnoreCase("1")) {
+            rb_asthamaYes.setChecked(true);
+        }
+        else if(PATIENT_ASTHAMA.equalsIgnoreCase("2")) {
+            rb_asthamaNo.setChecked(true);
+        }
+        else if(PATIENT_ASTHAMA.equalsIgnoreCase("0")) {
+            rb_asthamaYes.setChecked(false);
+            rb_asthamaNo.setChecked(false);
+        }
+        else {
+            rb_asthamaYes.setChecked(false);
+            rb_asthamaNo.setChecked(false);
+        }
+
+        // THY
+        if(PATIENT_THY.equalsIgnoreCase("1")) {
+            rb_thyYes.setChecked(true);
+        }
+        else if(PATIENT_THY.equalsIgnoreCase("2")) {
+            rb_thyNo.setChecked(true);
+        }
+        else if(PATIENT_THY.equalsIgnoreCase("0")) {
+            rb_thyYes.setChecked(false);
+            rb_thyNo.setChecked(false);
+        }
+        else {
+            rb_thyYes.setChecked(false);
+            rb_thyNo.setChecked(false);
+        }
+
+
         ArrayAdapter<String> smokingArray = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.smokingArray) );
         smokingArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         smoking_spinner.setAdapter(smokingArray);
@@ -353,7 +459,7 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
             }
         });
 
-        _edt_height_inch.addTextChangedListener(new TextWatcher() {
+      /*  _edt_height_inch.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) { }
             @Override
@@ -470,7 +576,7 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
                 }
 
             }
-        });
+        });*/
 
         /***************************** DRUG ALLERY SECTION **********************/
 
@@ -874,6 +980,91 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
             }
         }
 
+        //Cholesterol
+        int checkedRadioCholesterolButtonId = rg_cholesterol.getCheckedRadioButtonId();
+        if (checkedRadioCholesterolButtonId == -1) {   // No items Selected
+            PATIENT_CHOLESTEROL = "0";
+        }
+        else{
+            if (checkedRadioCholesterolButtonId == R.id.radioCholesterolYes) {
+                PATIENT_CHOLESTEROL = "1";
+            }
+            else if (checkedRadioCholesterolButtonId == R.id.radioCholesterolNo) {
+                PATIENT_CHOLESTEROL = "2";
+            }
+            else {
+                PATIENT_CHOLESTEROL = "0";
+            }
+        }
+
+        //Arthritis
+        int checkedRadioArthritisButtonId = rg_arthritis.getCheckedRadioButtonId();
+        if (checkedRadioArthritisButtonId == -1) {   // No items Selected
+            PATIENT_ARTHRITIS = "0";
+        }
+        else{
+            if (checkedRadioArthritisButtonId == R.id.radioArthritisYes) {
+                PATIENT_ARTHRITIS = "1";
+            }
+            else if (checkedRadioArthritisButtonId == R.id.radioArthritisNo) {
+                PATIENT_ARTHRITIS = "2";
+            }
+            else {
+                PATIENT_ARTHRITIS = "0";
+            }
+        }
+
+        //IHD
+        int checkedRadioIHDButtonId = rg_ihd.getCheckedRadioButtonId();
+        if (checkedRadioIHDButtonId == -1) {   // No items Selected
+            PATIENT_IHD = "0";
+        }
+        else{
+            if (checkedRadioIHDButtonId == R.id.radioIHDYes) {
+                PATIENT_IHD = "1";
+            }
+            else if (checkedRadioIHDButtonId == R.id.radioIHDNo) {
+                PATIENT_IHD = "2";
+            }
+            else {
+                PATIENT_IHD = "0";
+            }
+        }
+
+        //ASTHAMA
+        int checkedRadioAsthamaButtonId = rg_asthama.getCheckedRadioButtonId();
+        if (checkedRadioAsthamaButtonId == -1) {   // No items Selected
+            PATIENT_ASTHAMA = "0";
+        }
+        else{
+            if (checkedRadioAsthamaButtonId == R.id.radioAsthamaYes) {
+                PATIENT_ASTHAMA = "1";
+            }
+            else if (checkedRadioAsthamaButtonId == R.id.radioAsthamaNo) {
+                PATIENT_ASTHAMA = "2";
+            }
+            else {
+                PATIENT_ASTHAMA = "0";
+            }
+        }
+
+        //THY
+        int checkedRadioTHYButtonId = rg_thy.getCheckedRadioButtonId();
+        if (checkedRadioTHYButtonId == -1) {   // No items Selected
+            PATIENT_THY = "0";
+        }
+        else{
+            if (checkedRadioTHYButtonId == R.id.radioTHYYes) {
+                PATIENT_THY = "1";
+            }
+            else if (checkedRadioTHYButtonId == R.id.radioTHYNo) {
+                PATIENT_THY = "2";
+            }
+            else {
+                PATIENT_THY = "0";
+            }
+        }
+
 
         Log.d(Utils.TAG, " ******************* collectMedicalHistoryDetails **************** ");
         Log.d(Utils.TAG, " weight: "+weight);
@@ -887,6 +1078,12 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
         Log.d(Utils.TAG, " stroke: "+stroke);
         Log.d(Utils.TAG, " kidney: "+kidney_issue);
         Log.d(Utils.TAG, " other_details: "+other_details);
+
+        Log.d(Utils.TAG, " PATIENT_CHOLESTEROL: "+PATIENT_CHOLESTEROL);
+        Log.d(Utils.TAG, " PATIENT_ARTHRITIS: "+PATIENT_ARTHRITIS);
+        Log.d(Utils.TAG, " PATIENT_IHD: "+PATIENT_IHD);
+        Log.d(Utils.TAG, " PATIENT_ASTHAMA: "+PATIENT_ASTHAMA);
+        Log.d(Utils.TAG, " PATIENT_THY: "+PATIENT_THY);
 
         for(int i=0;i<PATIENT_DRUG_ALLERTY_ARRAY.size();i++)
         {
@@ -921,7 +1118,7 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
 
         submitHistoryToServer(weight,height,bmi,PATIENT_HYPERTENSION,PATIENT_DIABETES,PATIENT_SMOKING,PATIENT_ALCOHOL,
                 prev_intervention,stroke,kidney_issue, other_details, PATIENT_DRUG_ALLERTY_ARRAY,PATIENT_DRUG_ABUSE_ARRAY,
-                PATIENT_FAMILY_HISTORY_ARRAY );
+                PATIENT_FAMILY_HISTORY_ARRAY,PATIENT_CHOLESTEROL, PATIENT_ARTHRITIS, PATIENT_IHD, PATIENT_ASTHAMA, PATIENT_THY);
 
     }
 
@@ -1601,7 +1798,7 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
                                        final String patient_diabetes, final String patient_smoking, final String patient_alcohol,
                                        final String prev_intervention, final String stroke, final String kidney_issue, final String other_details,
                                        final List<DrugAllery> patient_drug_allerty_array, final List<DrugAbuse> patient_drug_abuse_array,
-                                       final List<FamilyHistory> patient_family_history_array) {
+                                       final List<FamilyHistory> patient_family_history_array, final String PATIENT_CHOLESTEROL, final String PATIENT_ARTHRITIS, final String PATIENT_IHD, final String PATIENT_ASTHAMA, final String PATIENT_THY) {
 
         new AsyncTask<Void, Integer, Boolean>() {
             boolean status = false;
@@ -1626,7 +1823,9 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
                     JSONObject jsonObject = JSONParser.updateMedicalHistory(PATIENT_ID, PATIENT_NAME,
                             weight, height, bmi, patient_hypertension, patient_diabetes, patient_smoking, patient_alcohol,
                             prev_intervention, stroke, kidney_issue, other_details, patient_drug_allerty_array,
-                            patient_drug_abuse_array, patient_family_history_array, USER_ID, USER_LOGIN_TYPE);
+                            patient_drug_abuse_array, patient_family_history_array,PATIENT_CHOLESTEROL,
+                            PATIENT_ARTHRITIS, PATIENT_IHD, PATIENT_ASTHAMA, PATIENT_THY,
+                            USER_ID, USER_LOGIN_TYPE);
 
                     if (jsonObject != null) {
                         Log.e(Utils.TAG, " GET: " + jsonObject.getString("result"));
@@ -1893,6 +2092,86 @@ public class MedicalHistoryOphthal  extends Fragment implements View.OnClickList
                                         else {
                                             rb_diabetesYes.setChecked(false);
                                             rb_diabetesNo.setChecked(false);
+                                        }
+
+                                        //Cholesterol
+                                        if(jsonArray.getJSONObject(j).getString("CHOLESTEROL").equalsIgnoreCase("1")) {
+                                            rb_cholesterolYes.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("CHOLESTEROL").equalsIgnoreCase("2")) {
+                                            rb_cholesterolNo.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("CHOLESTEROL").equalsIgnoreCase("0")) {
+                                            rb_cholesterolYes.setChecked(false);
+                                            rb_cholesterolNo.setChecked(false);
+                                        }
+                                        else {
+                                            rb_cholesterolYes.setChecked(false);
+                                            rb_cholesterolNo.setChecked(false);
+                                        }
+
+                                        //Arthritis
+                                        if(jsonArray.getJSONObject(j).getString("ARTHRITIS_cond").equalsIgnoreCase("1")) {
+                                            rb_arthritisYes.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("ARTHRITIS_cond").equalsIgnoreCase("2")) {
+                                            rb_arthritisNo.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("ARTHRITIS_cond").equalsIgnoreCase("0")) {
+                                            rb_arthritisYes.setChecked(false);
+                                            rb_arthritisNo.setChecked(false);
+                                        }
+                                        else {
+                                            rb_arthritisYes.setChecked(false);
+                                            rb_arthritisNo.setChecked(false);
+                                        }
+
+                                        //IHD
+                                        if(jsonArray.getJSONObject(j).getString("IHD_cond").equalsIgnoreCase("1")) {
+                                            rb_ihdYes.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("IHD_cond").equalsIgnoreCase("2")) {
+                                            rb_ihdNo.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("IHD_cond").equalsIgnoreCase("0")) {
+                                            rb_ihdYes.setChecked(false);
+                                            rb_ihdNo.setChecked(false);
+                                        }
+                                        else {
+                                            rb_ihdYes.setChecked(false);
+                                            rb_ihdNo.setChecked(false);
+                                        }
+
+                                        //Asthama
+                                        if(jsonArray.getJSONObject(j).getString("ASTHAMA").equalsIgnoreCase("1")) {
+                                            rb_asthamaYes.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("ASTHAMA").equalsIgnoreCase("2")) {
+                                            rb_asthamaNo.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("ASTHAMA").equalsIgnoreCase("0")) {
+                                            rb_asthamaYes.setChecked(false);
+                                            rb_asthamaNo.setChecked(false);
+                                        }
+                                        else {
+                                            rb_asthamaYes.setChecked(false);
+                                            rb_asthamaNo.setChecked(false);
+                                        }
+
+                                        //THY
+                                        if(jsonArray.getJSONObject(j).getString("THY_cond").equalsIgnoreCase("1")) {
+                                            rb_thyYes.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("THY_cond").equalsIgnoreCase("2")) {
+                                            rb_thyNo.setChecked(true);
+                                        }
+                                        else if(jsonArray.getJSONObject(j).getString("THY_cond").equalsIgnoreCase("0")) {
+                                            rb_thyYes.setChecked(false);
+                                            rb_thyNo.setChecked(false);
+                                        }
+                                        else {
+                                            rb_thyYes.setChecked(false);
+                                            rb_thyNo.setChecked(false);
                                         }
 
                                         if(jsonArray.getJSONObject(j).getString("smoking").equals("")) {
