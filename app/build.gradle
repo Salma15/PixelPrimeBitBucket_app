@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
@@ -56,12 +57,11 @@ dependencies {
     // Date and Time picker
     implementation files('libs/universal-image-loader-1.6.1-with-src.jar')
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
-
     // QR CODE SCANNING
     implementation 'com.google.android.gms:play-services-gcm:11.0.4'
     implementation 'com.itextpdf:itextg:5.5.9'
     implementation 'com.hbb20:ccp:2.1.2'
-
-    implementation 'com.journeyapps:zxing-android-embedded:3.4.0' // QR CODE SCANNING
+    implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
+    // QR CODE SCANNING
 }
 apply plugin: 'com.google.gms.google-services'

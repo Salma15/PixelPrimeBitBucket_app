@@ -11,7 +11,9 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.FragmentManager;
@@ -21,8 +23,12 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.URLSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -538,8 +544,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 Intent sharingProfileIntent = new Intent(Intent.ACTION_SEND);
                 sharingProfileIntent.setType("text/plain");
                 sharingProfileIntent.putExtra(Intent.EXTRA_SUBJECT, "Pixel Prime");
-               // sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n"+"https://pixeleyecare.com/SendRequestLink/RefLink?d="+LOGIN_ENCRYPT_USERID);
-                sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n"+"https://pixeleyecare.com/Doctor-Profile?id="+LOGIN_ENCRYPT_USERID+"&hid="+hosp_id);
+                sharingProfileIntent.putExtra(Intent.EXTRA_TEXT, USERNAME+"\n" + LOGIN_SPEC_NAME + "\n" + USER_LOCATION + "\n\n"+ "You can connect with me & also book an appointment by visiting the link below: "+"\n\n"+APIClass.BASE_URL+"/Doctor-Profile?id="+LOGIN_ENCRYPT_USERID+"&hid="+hosp_id);
                 startActivity(Intent.createChooser(sharingProfileIntent, "Share Profile Via"));
 
 

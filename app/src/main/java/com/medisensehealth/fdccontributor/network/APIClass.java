@@ -8,6 +8,7 @@ public class APIClass {
 
     public static String API_KEY = "AIzaSyAbJc6srTVmzg1ZLOSFr5l0E7Lxk7cOez8";
     public static String DRS_HOST = "https://pixeleyecare.com/fdc_api/";
+    public static String BASE_URL = "https://pixeleyecare.com";
 
     public static String DRS_HOST_LOGIN = DRS_HOST + "LOGIN_DOC";
     public static String DRS_PATIENT_LIST = DRS_HOST + "PATIENT_LIST";
@@ -664,4 +665,7 @@ public class APIClass {
     public static final String KEY_OPTICALS_COUNTRY = "txtOpticalCountry";
     public static final String KEY_OPTICALS_CONTACT_PERSON = "txtOpticalContactPerson";
 
+
+
+    public static String DRS_HOST_TESTING_LOGIN = DRS_HOST + "TESTING_LOGIN";
 }

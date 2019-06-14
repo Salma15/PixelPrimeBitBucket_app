@@ -435,7 +435,7 @@ public class AddNewPatientActivity extends AppCompatActivity implements View.OnC
                                 @Override
                                 public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
                                 {
-                                    Toast.makeText(AddNewPatientActivity.this, "" + position +" mem" + memberArraylist.get(position).getMemberid()+" user" + memberArraylist.get(position).getUserid() +" Name: "+memberArraylist.get(position).getMemberName(), Toast.LENGTH_SHORT).show();
+                                  //  Toast.makeText(AddNewPatientActivity.this, "" + position +" mem" + memberArraylist.get(position).getMemberid()+" user" + memberArraylist.get(position).getUserid() +" Name: "+memberArraylist.get(position).getMemberName(), Toast.LENGTH_SHORT).show();
 
                                     member_id = memberArraylist.get(position).getMemberid();
                                     user_id =  memberArraylist.get(position).getUserid();

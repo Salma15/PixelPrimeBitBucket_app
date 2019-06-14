@@ -215,6 +215,9 @@ public class SearchPatientsActivity extends AppCompatActivity implements View.On
         PatientsListArraylist.clear();
         adapter.notifyDataSetChanged();
 
+        Log.d(Utils.TAG +" PatId: ", String.valueOf(USER_ID));
+        Log.d(Utils.TAG +" PatLogType: ", USER_LOGIN_TYPE);
+
         final ProgressDialog progressDialog = new ProgressDialog(SearchPatientsActivity.this, ProgressDialog.THEME_HOLO_LIGHT);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Searching Result...");
