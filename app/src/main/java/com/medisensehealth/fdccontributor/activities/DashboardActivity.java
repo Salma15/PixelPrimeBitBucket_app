@@ -383,6 +383,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         MenuItem item = menu.findItem(R.id.action_notify);
         MenuItem item_share = menu.findItem(R.id.action_share);
         MenuItem item_bmj = menu.findItem(R.id.action_bmj);
+        item.setVisible(false);
        /* SpannableString s = new SpannableString("BMJ");
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, s.length(), 0);
         item_bmj.setTitle(s);*/
