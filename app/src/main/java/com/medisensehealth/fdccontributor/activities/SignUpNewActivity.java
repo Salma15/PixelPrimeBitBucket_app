@@ -356,6 +356,7 @@ public class SignUpNewActivity extends AppCompatActivity implements View.OnClick
 
         new AsyncTask<Void, Integer, Boolean>() {
             boolean status = false;
+            int status_register = 0;
             ProgressDialog progressDialog1;
             String mobile_number, otp_number;
 
@@ -378,8 +379,14 @@ public class SignUpNewActivity extends AppCompatActivity implements View.OnClick
                         Log.e(Utils.TAG, " GET: " + jsonObject.getString("result"));
                         if (jsonObject.getString("result").equals("success")) {
                             status = true;
-                        } else {
+                            status_register = 1;
+                        } else if (jsonObject.getString("result").equals("pending")) {
                             status = false;
+                            status_register = 2;
+                        }
+                        else {
+                            status = false;
+                            status_register = 0;
                         }
                     }
                     // return true;
@@ -407,7 +414,14 @@ public class SignUpNewActivity extends AppCompatActivity implements View.OnClick
 
                     //  Toast.makeText(SignUpNewActivity.this,"Registered Successfully", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignUpNewActivity.this, "User already exists !!! \nPlease login to your account.", Toast.LENGTH_SHORT).show();
+                 //  Toast.makeText(SignUpNewActivity.this, "User already exists !!! \nPlease login to your account.", Toast.LENGTH_SHORT).show();
+
+                    if(status_register == 2){
+                        AppUtils.showCustomSuccessMessage(SignUpNewActivity.this, "Sign up !!", "User already exists !!! \nPlease login to your account.", "OK", null, null);
+                    }
+                    else {
+                        Toast.makeText(SignUpNewActivity.this, "Registration Failed. !!!", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }

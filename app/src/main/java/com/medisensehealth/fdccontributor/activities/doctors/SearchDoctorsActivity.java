@@ -247,8 +247,8 @@ public class SearchDoctorsActivity extends AppCompatActivity implements View.OnC
                                         if (jsonArray.length() > 0) {
                                             for (int i = 0; i < jsonArray.length(); i++) {
 
-                                                doctors = new DoctorList(jsonArray.getJSONObject(i).getInt("ref_id"), jsonArray.getJSONObject(i).getString("ref_name"), jsonArray.getJSONObject(i).getInt("doc_age"),
-                                                        jsonArray.getJSONObject(i).getString("ref_exp"), jsonArray.getJSONObject(i).getString("doc_photo"), jsonArray.getJSONObject(i).getString("doc_qual"),
+                                                doctors = new DoctorList(jsonArray.getJSONObject(i).getInt("ref_id"), jsonArray.getJSONObject(i).getString("doc_name"), jsonArray.getJSONObject(i).getInt("doc_age"),
+                                                        jsonArray.getJSONObject(i).getString("doc_exp"), jsonArray.getJSONObject(i).getString("doc_photo"), jsonArray.getJSONObject(i).getString("doc_qual"),
                                                         jsonArray.getJSONObject(i).getInt("spec_id"), jsonArray.getJSONObject(i).getString("spec_name"),
                                                         0, USER_LOGIN_TYPE,USER_ID, jsonArray.getJSONObject(i).getString("ref_address"));
                                                 doctorListArraylist.add(doctors);
